@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//  Route::resource('/','DashboardController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('/numberlist','ThreedController');
