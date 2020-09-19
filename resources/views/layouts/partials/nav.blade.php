@@ -359,27 +359,27 @@
 <div class="modal fade" id="exampleModal-4" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="ModalLabel">Change Password</h5>
+      <!-- <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
-      <form method="POST" action="{{ url('admin/admin') }}">
+      </div> -->
+      <form role="form" action="{{ route('allnumber.store')}}" method="post" enctype="multipart/form-data">
+        {{ csrf_field()}}
         <div class="modal-body">
-            @csrf
-
-            <div class="form-group">
-              <label for="message-text" class="col-form-label">New Password:</label>
-              <input id="new_password" type="password" class="form-control" name="new_password" autocomplete="current-password">
-            </div>
-            <div class="form-group">
-              <label for="message-text" class="col-form-label">New Confirm Password:</label>
-              <input id="new_confirm_password" type="password" class="form-control" name="new_confirm_password" autocomplete="current-password">
-            </div>
+             <div class="form-group">
+                                <label for="number">Add_Number</label>
+                                <!-- <input type="number" class="form-control" id="number" name="number" minlength="3" maxlength="3" placeholder="Number"> -->
+                                <input name="allnumber"
+                                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                    type = "number" class="form-control"
+                                    maxlength = "3"
+                                />
+                                
+                                </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-success">Update Password</button>
+          <button type="submit" class="btn btn-success">Submit</button>
           <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
         </div>
       </form>
@@ -387,3 +387,6 @@
   </div>
 </div>
 
+
+
+  
