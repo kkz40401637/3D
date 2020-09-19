@@ -152,11 +152,19 @@
                 Change Password
               </a>
               <div class="dropdown-divider"></div>
+<<<<<<< HEAD
               <a class="dropdown-item" href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 <i class="fas fa-power-off text-primary"></i>
                  {{ __('Logout') }}
               </a>
               <!-- <form id="logout-form" action="" method="POST" style="display: none;">
+=======
+              <!-- <a class="dropdown-item" href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <i class="fas fa-power-off text-primary"></i>
+                 {{ __('Logout') }}
+              </a>
+              <form id="logout-form" action="" method="POST" style="display: none;">
+>>>>>>> 2915ddcd68af1feaf47e2ce9e8ecc1395bc50546
                 @csrf
             </form> -->
 
@@ -360,6 +368,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
+<<<<<<< HEAD
         <!-- <h5 class="modal-title" id="ModalLabel">Change Password</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -404,6 +413,31 @@
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
                         <button class="btn btn-light">Cancel</button>
                     </form> -->
+=======
+        <h5 class="modal-title" id="ModalLabel">Change Password</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="POST" action="{{ url('admin/admin') }}">
+        <div class="modal-body">
+            @csrf
+
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">New Password:</label>
+              <input id="new_password" type="password" class="form-control" name="new_password" autocomplete="current-password">
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">New Confirm Password:</label>
+              <input id="new_confirm_password" type="password" class="form-control" name="new_confirm_password" autocomplete="current-password">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Update Password</button>
+          <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+        </div>
+      </form>
+>>>>>>> 2915ddcd68af1feaf47e2ce9e8ecc1395bc50546
     </div>
   </div>
 </div>

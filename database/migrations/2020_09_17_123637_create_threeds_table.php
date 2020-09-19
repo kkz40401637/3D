@@ -15,7 +15,11 @@ class CreateThreedsTable extends Migration
     {
         Schema::create('threeds', function (Blueprint $table) {
             $table->id();
+<<<<<<< HEAD
             $table->char('number');
+=======
+            $table->integer('number');
+>>>>>>> 2915ddcd68af1feaf47e2ce9e8ecc1395bc50546
             $table->timestamps();
         });
     }
