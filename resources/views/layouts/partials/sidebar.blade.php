@@ -20,29 +20,29 @@
       </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="">
+      <a class="nav-link" href="home">
         <i class="fa fa-home menu-icon"></i>
         <span class="menu-title">Dashboard</span>
       </a>
     </li>
-
-     <li class="nav-item">
-      <a class="nav-link" href="{{url('numberlist')}}">
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('allnumber')}}">
         <i class="fa fa-home menu-icon"></i>
         <span class="menu-title">Number_List</span>
       </a>
     </li>
+    
 
     <li class="nav-item d-none d-lg-block">
       <a class="nav-link" data-toggle="collapse" href="#sidebar-layouts" aria-expanded="false" aria-controls="sidebar-layouts">
         <i class="fas fa-users menu-icon"></i>
-        <span class="menu-title">Sale Persons</span>
+        <span class="menu-title">ဒိုင်ဂဏန်များ</span>
         <i class="menu-arrow"></i>
       </a>
       <div class="collapse" id="sidebar-layouts">
         <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="">Sale Person lists</a></li>
-            <li class="nav-item"> <a class="nav-link" href="">Create Sale Person</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{url('numberlist')}}">AddNumber</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{url('offnumber')}}">Number_List</a></li>
         </ul>
       </div>
     </li>

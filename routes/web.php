@@ -24,3 +24,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/numberlist','ThreedController');
+Route::resource('/offnumber','OffnumberController');
+Route::resource('/allnumber','AllnumberController');

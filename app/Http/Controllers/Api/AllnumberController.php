@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
-use App\Threed;
+namespace App\Http\Controllers\Api;
+use App\Http\Resources\AllnumberResource;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Allnumber;
 
-class ThreedController extends Controller
+class AllnumberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +15,7 @@ class ThreedController extends Controller
      */
     public function index()
     {
-        $threeds = Threed::all();
-        return view('number.numberlist',compact('threeds'));
+        return AllnumberResource::collection(Allnumber::all());
     }
 
     /**
@@ -35,18 +36,9 @@ class ThreedController extends Controller
      */
     public function store(Request $request)
     {
-          request()->validate([
-             'number' => 'required',
-           
-        ]);
-        $threeds = new Threed();
-        $threeds->number = $request->input('number');
-       
-        if($threeds->save());
-
-            return redirect()->back()->with('success', 'Book information inserted successfully!');
+        //
     }
-    
+
     /**
      * Display the specified resource.
      *

@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Offnumber;
 use App\Threed;
 use Illuminate\Http\Request;
 
-class ThreedController extends Controller
+class OffnumberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,9 @@ class ThreedController extends Controller
      */
     public function index()
     {
+        $offnumbers = Offnumber::all();
         $threeds = Threed::all();
-        return view('number.numberlist',compact('threeds'));
+        return view('number.offnumber',compact('offnumbers','threeds'));
     }
 
     /**
@@ -35,18 +37,18 @@ class ThreedController extends Controller
      */
     public function store(Request $request)
     {
-          request()->validate([
-             'number' => 'required',
+         request()->validate([
+             'offnumber' => 'required',
            
         ]);
-        $threeds = new Threed();
-        $threeds->number = $request->input('number');
+        $offnumbers = new Offnumber();
+        $offnumbers->offnumber = $request->input('offnumber');
        
-        if($threeds->save());
+        if($offnumbers->save());
 
-            return redirect()->back()->with('success', 'Book information inserted successfully!');
+            return redirect()->back()->with('success', 'Number information inserted successfully!');
     }
-    
+
     /**
      * Display the specified resource.
      *

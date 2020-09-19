@@ -21,3 +21,6 @@ Route::get('/logout', 'Api\AuthController@logout');
 
 Route::get('/user', 'Api\AuthController@user');
 
+//allnumber
+Route::get('/allnumber','Api\AllnumberController@index');
+

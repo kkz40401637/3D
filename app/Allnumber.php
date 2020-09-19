@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Threed extends Model
+class Allnumber extends Model
 {
     protected $fillable = [
-    	'number'
+    	'allnumber'
     ];
 }

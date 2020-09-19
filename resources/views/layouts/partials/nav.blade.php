@@ -152,11 +152,11 @@
                 Change Password
               </a>
               <div class="dropdown-divider"></div>
-              <!-- <a class="dropdown-item" href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+              <a class="dropdown-item" href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 <i class="fas fa-power-off text-primary"></i>
                  {{ __('Logout') }}
               </a>
-              <form id="logout-form" action="" method="POST" style="display: none;">
+              <!-- <form id="logout-form" action="" method="POST" style="display: none;">
                 @csrf
             </form> -->
 
@@ -360,29 +360,50 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="ModalLabel">Change Password</h5>
+        <!-- <h5 class="modal-title" id="ModalLabel">Change Password</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
-        </button>
+        </button> -->
       </div>
-      <form method="POST" action="{{ url('admin/admin') }}">
+      <form role="form" action="{{ route('allnumber.store')}}" method="post" enctype="multipart/form-data">
         <div class="modal-body">
-            @csrf
-
-            <div class="form-group">
-              <label for="message-text" class="col-form-label">New Password:</label>
-              <input id="new_password" type="password" class="form-control" name="new_password" autocomplete="current-password">
-            </div>
-            <div class="form-group">
-              <label for="message-text" class="col-form-label">New Confirm Password:</label>
-              <input id="new_confirm_password" type="password" class="form-control" name="new_confirm_password" autocomplete="current-password">
-            </div>
+          {{ csrf_field()}}
+              <div class="form-group">
+                        <label for="allnumber">Add_Number</label>
+                        <input name="allnumber"
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(100, this.maxLength);"
+                            type = "number" class="form-control"
+                            maxlength = "3"
+                        />
+                        
+                        </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-success">Update Password</button>
+          <button type="submit" class="btn btn-success">Submit</button>
           <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
         </div>
       </form>
+
+      <!-- <form role="form" action="{{ route('allnumber.store')}}" method="post" enctype="multipart/form-data">
+                        {{ csrf_field()}}
+                        <div class="form-group">
+                        <label for="allnumber">Add_Number</label>
+                        <input name="allnumber"
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(100, this.maxLength);"
+                            type = "number" class="form-control"
+                            maxlength = "3"
+                        />
+                        
+                        </div>
+                   
+                        <div class="form-group">
+                        <div class="form-check form-check-flat form-check-primary">
+                            
+                        </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                        <button class="btn btn-light">Cancel</button>
+                    </form> -->
     </div>
   </div>
 </div>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateThreedsTable extends Migration
+class CreateAllnumbersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateThreedsTable extends Migration
      */
     public function up()
     {
-        Schema::create('threeds', function (Blueprint $table) {
+        Schema::create('allnumbers', function (Blueprint $table) {
             $table->id();
-            $table->char('number');
+            $table->char('allnumber');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateThreedsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('threeds');
+        Schema::dropIfExists('allnumbers');
     }
 }

@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Threed extends Model
+class Offnumber extends Model
 {
     protected $fillable = [
-    	'number'
+    	'offnumber'
     ];
 }
