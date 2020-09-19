@@ -46,11 +46,7 @@ class ThreedController extends Controller
 
             return redirect()->back()->with('success', 'Book information inserted successfully!');
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 2915ddcd68af1feaf47e2ce9e8ecc1395bc50546
     /**
      * Display the specified resource.
      *

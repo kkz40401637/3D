@@ -152,19 +152,11 @@
                 Change Password
               </a>
               <div class="dropdown-divider"></div>
-<<<<<<< HEAD
-              <a class="dropdown-item" href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                <i class="fas fa-power-off text-primary"></i>
-                 {{ __('Logout') }}
-              </a>
-              <!-- <form id="logout-form" action="" method="POST" style="display: none;">
-=======
               <!-- <a class="dropdown-item" href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 <i class="fas fa-power-off text-primary"></i>
                  {{ __('Logout') }}
               </a>
               <form id="logout-form" action="" method="POST" style="display: none;">
->>>>>>> 2915ddcd68af1feaf47e2ce9e8ecc1395bc50546
                 @csrf
             </form> -->
 
@@ -368,52 +360,6 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-<<<<<<< HEAD
-        <!-- <h5 class="modal-title" id="ModalLabel">Change Password</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button> -->
-      </div>
-      <form role="form" action="{{ route('allnumber.store')}}" method="post" enctype="multipart/form-data">
-        <div class="modal-body">
-          {{ csrf_field()}}
-              <div class="form-group">
-                        <label for="allnumber">Add_Number</label>
-                        <input name="allnumber"
-                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(100, this.maxLength);"
-                            type = "number" class="form-control"
-                            maxlength = "3"
-                        />
-                        
-                        </div>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-success">Submit</button>
-          <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
-        </div>
-      </form>
-
-      <!-- <form role="form" action="{{ route('allnumber.store')}}" method="post" enctype="multipart/form-data">
-                        {{ csrf_field()}}
-                        <div class="form-group">
-                        <label for="allnumber">Add_Number</label>
-                        <input name="allnumber"
-                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(100, this.maxLength);"
-                            type = "number" class="form-control"
-                            maxlength = "3"
-                        />
-                        
-                        </div>
-                   
-                        <div class="form-group">
-                        <div class="form-check form-check-flat form-check-primary">
-                            
-                        </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                        <button class="btn btn-light">Cancel</button>
-                    </form> -->
-=======
         <h5 class="modal-title" id="ModalLabel">Change Password</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -437,7 +383,6 @@
           <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
         </div>
       </form>
->>>>>>> 2915ddcd68af1feaf47e2ce9e8ecc1395bc50546
     </div>
   </div>
 </div>
