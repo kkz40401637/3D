@@ -33,6 +33,13 @@ class LoginController extends Controller
      *
      * @return void
      */
+
+    protected function redirectTo()
+    {
+        if(Auth()->user()->hasRole('superadmin')||Auth()->user()->hasRole('admin')||Auth()->user()->hasRole('user')){
+            return 'adminlogin';
+        }
+    }
     public function __construct()
     {
         $this->middleware('guest')->except('logout');

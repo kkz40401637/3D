@@ -160,14 +160,14 @@
                 @csrf
             </form> -->
 
-              <a class="dropdown-item" href="{{ route('logout') }}"
+              <a class="dropdown-item" href="{{ url('/adminlogin/logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                                      <i class="fas fa-power-off text-primary"></i>
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ url('/adminlogin/logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
             </div>
@@ -375,7 +375,7 @@
                                     type = "number" class="form-control"
                                     maxlength = "3"
                                 />
-                                
+
                                 </div>
         </div>
         <div class="modal-footer">
@@ -389,4 +389,3 @@
 
 
 
-  

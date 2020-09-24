@@ -21,8 +21,23 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/numberlist','ThreedController');
 Route::resource('/offnumber','OffnumberController');
 Route::resource('/allnumber','AllnumberController');
+
+
+Route::get('adminlogin/', 'AdminLoginController@index');
+
+
+Route::post('adminlogin/', 'AdminLoginController@checklogin');
+Route::post('adminlogin/logout', 'AdminLoginController@logout');
+
+
+
+
+Route::resource('admins','AdminController')->middleware('auth');
+Route::resource('users','UserController')->middleware('auth');
+
+

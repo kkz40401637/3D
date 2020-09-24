@@ -7,15 +7,48 @@
           <img src="{{ asset('assets/backend/images/shan_star.jpg') }}" alt="image"/>
         </div>
         <div class="profile-name">
+            @role('superadmin')
           <p class="name">
             Welcome
-            {{-- @if(Auth::guard('admin')->check())
-            {{ Auth::guard('admin')->user()->name }}
-            @endif --}}
+            @if(Auth()->user()->hasRole('superadmin'))
+            {{ Auth()->user()->name }}
+            @endif
           </p>
+          @endrole('superadmin')
+
+          @role('admin')
+          <p class="name">
+            Welcome
+            @if(Auth()->user()->hasRole('admin'))
+            {{ Auth()->user()->name }}
+            @endif
+          </p>
+          @endrole('admin')
+
+          @role('user')
+          <p class="name">
+            Welcome
+            @if(Auth()->user()->hasRole('user'))
+            {{ Auth()->user()->name }}
+            @endif
+          </p>
+          @endrole('user')
+
+          @role('superadmin')
           <p class="designation">
             Super Admin
           </p>
+          @endrole
+          @role('admin')
+          <p class="designation">
+             Admin
+          </p>
+          @endrole
+          @role('user')
+          <p class="designation">
+             User
+          </p>
+          @endrole
         </div>
       </div>
     </li>
@@ -27,7 +60,40 @@
         <span class="menu-title">Dashboard</span>
       </a>
     </li>
+@role('superadmin')
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#admins" aria-expanded="false" aria-controls="admins">
+            <i class="fas fa-user-shield menu-icon"></i>
+          <span class="menu-title">Admins   </span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="admins">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{{ route('admins.create') }}"> Create Admin</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('admins.store') }}"> List Admin </a></li>
 
+          </ul>
+        </div>
+      </li>
+@endrole
+
+@role('admin')
+<li class="nav-item">
+    <a class="nav-link" data-toggle="collapse" href="#users" aria-expanded="false" aria-controls="users">
+        <i class="fas fa-user-shield menu-icon"></i>
+      <span class="menu-title">Users   </span>
+      <i class="menu-arrow"></i>
+    </a>
+    <div class="collapse" id="users">
+      <ul class="nav flex-column sub-menu">
+        <li class="nav-item"> <a class="nav-link" href="{{ route('users.create') }}"> Create User</a></li>
+        <li class="nav-item"> <a class="nav-link" href="{{ route('users.store') }}"> List User </a></li>
+
+      </ul>
+    </div>
+  </li>
+
+@endrole
      <li class="nav-item">
       <a class="nav-link" href="{{url('allnumber')}}">
 
@@ -35,7 +101,7 @@
         <span class="menu-title">Number_List</span>
       </a>
     </li>
-  
+
 
     <li class="nav-item d-none d-lg-block">
       <a class="nav-link" data-toggle="collapse" href="#sidebar-layouts" aria-expanded="false" aria-controls="sidebar-layouts">
