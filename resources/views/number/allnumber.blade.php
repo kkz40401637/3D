@@ -1,7 +1,7 @@
 @extends('layouts.partials.master')
 @section('title', 'Dashboard')
 @section('content')
-<div class="main-panel">        
+<div class="main-panel">
         <div class="content-wrapper">
             <div class="row">
                  <!-- <div class="col-12 grid-margin stretch-card">
@@ -17,12 +17,12 @@
                             type = "number" class="form-control"
                             maxlength = "3"
                         />
-                        
+
                         </div>
-                   
+
                         <div class="form-group">
                         <div class="form-check form-check-flat form-check-primary">
-                            
+
                         </div>
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
@@ -39,15 +39,15 @@
                   <h4 class="card-title">Number_List</h4>
                   <div class="table-responsive">
                     <table class="table">
-                
+
                       <tbody>
                        @foreach($allnumbers as $allnumber)
                         <tr>
                            <label class="badge badge-outline-success badge-pill"><h2>{{ $allnumber->allnumber }}</h2> </label>&nbsp;
                         </tr>
                         @endforeach
-                      
-                      
+
+
                       </tbody>
                     </table>
                   </div>
@@ -78,8 +78,12 @@
                   <div class="tab-content">
                     <div class="tab-pane fade active show" id="home-1" role="tabpanel" aria-labelledby="home-tab">
                       <div class="media">
+                          @hasanyrole('superadmin|admin')
+
                             <!-- <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal-4" data-whatever="@mdo">Open</button> -->
                             <button type="button" class="btn btn-primary btn-rounded btn-icon" data-toggle="modal" data-target="#exampleModal-4" data-whatever="@mdo"><i class="fa fa-plus"></i></button>&nbsp;&nbsp;
+
+                            @endhasanyrole
                         <div class="media-body">
                           <tbody>
                        @foreach($allnumbers as $allnumber)
@@ -87,8 +91,8 @@
                            <label class="badge badge-outline-success badge-pill"><h2>{{ $allnumber->allnumber }}</h2> </label>&nbsp;
                         </tr>
                         @endforeach
-                      
-                      
+
+
                       </tbody>
                         </div>
                       </div>
@@ -99,8 +103,8 @@
                         <div class="media-body">
                           <h4 class="mt-0">John Doe</h4>
                           <p>
-                              Fail most room even gone her end like. Comparison dissimilar unpleasant six compliment two unpleasing 
-                              any add. Ashamed my company thought wishing colonel it prevent he in. Pretended residence are something 
+                              Fail most room even gone her end like. Comparison dissimilar unpleasant six compliment two unpleasing
+                              any add. Ashamed my company thought wishing colonel it prevent he in. Pretended residence are something
                               far engrossed old off.
                           </p>
                         </div>
@@ -123,8 +127,8 @@
                   </div>
                 </div>
               </div>
-            
+
         <!-- partial:../../partials/_footer.html -->
-      
+
       </div>
 @endsection
