@@ -15,12 +15,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::post('/register', 'Api\AuthController@register');
-Route::post('/login', 'Api\AuthController@login');
-Route::get('/logout', 'Api\AuthController@logout');
+Route::post('/register', 'AuthController@register');
+Route::post('/login', 'AuthController@login');
+Route::group(['middleware' => 'auth.jwt'], function(){
+Route::post('/logout','AuthController@logout');
+});
+// Route::get('/logout', 'Api\AuthController@logout');
 
 Route::get('/user', 'Api\AuthController@user');
 
 //allnumber
 Route::get('/allnumber','Api\AllnumberController@index');
-
+Route::get('/offnumber','Api\OffController@index');
+Route::get('/report','Api\ReportController@index');

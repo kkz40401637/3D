@@ -54,7 +54,7 @@
     </li>
     <li class="nav-item">
 
-      <a class="nav-link" href="home">
+      <a class="nav-link" href="adminlogin">
 
         <i class="fa fa-home menu-icon"></i>
         <span class="menu-title">Dashboard</span>
@@ -69,6 +69,7 @@
         </a>
         <div class="collapse" id="admins">
           <ul class="nav flex-column sub-menu">
+            
             <li class="nav-item"> <a class="nav-link" href="{{ route('admins.create') }}"> Create Admin</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{ route('admins.store') }}"> List Admin </a></li>
 
@@ -81,117 +82,93 @@
 <li class="nav-item">
     <a class="nav-link" data-toggle="collapse" href="#users" aria-expanded="false" aria-controls="users">
         <i class="fas fa-user-shield menu-icon"></i>
-      <span class="menu-title">Users   </span>
+      <span class="menu-title">ထိုးသားများ</span>
       <i class="menu-arrow"></i>
     </a>
     <div class="collapse" id="users">
       <ul class="nav flex-column sub-menu">
-        <li class="nav-item"> <a class="nav-link" href="{{ route('users.create') }}"> Create User</a></li>
-        <li class="nav-item"> <a class="nav-link" href="{{ route('users.store') }}"> List User </a></li>
+        <li class="nav-item"> <a class="nav-link" href="{{ route('users.create') }}">ထိုးသားများထည့်မယ်</a></li>
+        <li class="nav-item"> <a class="nav-link" href="{{ route('users.store') }}">ထိုးသားများကြည့်မယ်</a></li>
+      </ul>
+    </div>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="collapse" href="#football" aria-expanded="false" aria-controls="football">
+        <i class="fas fa-user-shield menu-icon"></i>
+      <span class="menu-title">ဘောလုံး</span>
+      <i class="menu-arrow"></i>
+    </a>
+    <div class="collapse" id="football">
+      <ul class="nav flex-column sub-menu">
+        <li class="nav-item"> <a class="nav-link" href="{{ route('footballs.create') }}">မောင်းကြေးဖွင့်မယ်</a></li>
+        <li class="nav-item"> <a class="nav-link" href="{{ route('bodys.create') }}">ဘောဒီကြေးဖွင့်မယ်</a></li>
 
       </ul>
     </div>
   </li>
 
+
 @endrole
-     <li class="nav-item">
-      <a class="nav-link" href="{{url('allnumber')}}">
 
-        <i class="fa fa-plus menu-icon"></i>
-        <span class="menu-title">Number_List</span>
-      </a>
-    </li>
-
-
+@role('admin')
     <li class="nav-item d-none d-lg-block">
       <a class="nav-link" data-toggle="collapse" href="#sidebar-layouts" aria-expanded="false" aria-controls="sidebar-layouts">
         <i class="fas fa-users menu-icon"></i>
 
-        <span class="menu-title">ဒိုင်ဂဏန်များ</span>
+        <span class="menu-title">သုံးလုံးပိတ်ဂဏန်းများ</span>
         <i class="menu-arrow"></i>
       </a>
       <div class="collapse" id="sidebar-layouts">
         <ul class="nav flex-column sub-menu">
 
-            <li class="nav-item"> <a class="nav-link" href="{{url('numberlist')}}">AddNumber</a></li>
-            <li class="nav-item"> <a class="nav-link" href="{{url('offnumber')}}">Number_List</a></li>
-
-            <li class="nav-item"> <a class="nav-link" href="">Sale Person lists</a></li>
-            <li class="nav-item"> <a class="nav-link" href="">Create Sale Person</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{url('offnumber')}}">ပိတ်ဂဏန်းများ</a></li>
+            
+            {{-- <li class="nav-item"> <a class="nav-link" href="{{url('allnumber')}}">Number_List</a></li> --}}
 
         </ul>
       </div>
     </li>
+@endrole
+   
 
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#accounts" aria-expanded="false" aria-controls="accounts">
-        <i class="fas fa-exclamation-circle menu-icon"></i>
-        <span class="menu-title">Items</span>
-        <i class="menu-arrow"></i>
+      <a class="nav-link" href="{{url('reports')}}">
+       <i class="fas fa-file menu-icon"></i>
+        <span class="menu-title">ချဲထိုးမယ်</span>
       </a>
-      <div class="collapse" id="accounts">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href=""> Category Lists</a></li>
-          <li class="nav-item"> <a class="nav-link" href=""> Create Category </a></li>
-          <li class="nav-item"> <a class="nav-link" href=""> Item Lists</a></li>
-          <li class="nav-item"> <a class="nav-link" href=""> Create Item </a></li>
-        </ul>
-      </div>
     </li>
-    {{-- <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
-        <i class="fas fa-file menu-icon"></i>
-        <span class="menu-title">General Pages</span>
-        <i class="menu-arrow"></i>
+
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('footballs.index') }}">
+       <i class="fas fa-file menu-icon"></i>
+        <span class="menu-title">မောင်းလောင်းမယ်</span>
       </a>
-      <div class="collapse" id="general-pages">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/profile.html"> Profile </a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/faq.html"> FAQ </a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/faq-2.html"> FAQ 2 </a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/news-grid.html"> News grid </a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/timeline.html"> Timeline </a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/search-results.html"> Search Results </a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/portfolio.html"> Portfolio </a></li>
-        </ul>
-      </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('bodys.index') }}">
+       <i class="fas fa-file menu-icon"></i>
+        <span class="menu-title">ဘောဒီလောင်းမယ်</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('drives.index') }}">
+        <i class="fas fa-table menu-icon"></i>
+          <span class="menu-title">လောင်းထားသည့်မောင်းများ</span>
+
+        </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#apps" aria-expanded="false" aria-controls="apps">
-        <i class="fas fa-briefcase menu-icon"></i>
-        <span class="menu-title">Apps</span>
-        <i class="menu-arrow"></i>
-      </a>
-      <div class="collapse" id="apps">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="pages/apps/email.html"> Email </a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/apps/calendar.html"> Calendar </a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/apps/todo.html"> Todo </a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/apps/gallery.html"> Gallery </a></li>
-        </ul>`
-      </div>
+        <a class="nav-link" href="{{ route('bodysl.index') }}">
+         <i class="fas fa-table menu-icon"></i>
+          <span class="menu-title">လောင်းထားသည့်ဘောဒီများ</span>
+
+        </a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#e-commerce" aria-expanded="false" aria-controls="e-commerce">
-        <i class="fas fa-shopping-cart menu-icon"></i>
-        <span class="menu-title">Threed</span>
-        <i class="menu-arrow"></i>
-      </a>
-      <div class="collapse" id="e-commerce">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/invoice.html"> Invoice </a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/pricing-table.html"> Pricing Table </a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/orders.html"> Orders </a></li>
-        </ul>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="pages/documentation.html">
-        <i class="far fa-file-alt menu-icon"></i>
-        <span class="menu-title">Documentation</span>
-      </a>
-    </li> --}}
+
+  
   </ul>
 </nav>
 <!-- partial -->

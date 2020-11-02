@@ -91,6 +91,7 @@ class OffnumberController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Offnumber::where('id',$id)->delete();
+        return redirect()->back();
     }
 }

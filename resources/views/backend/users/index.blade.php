@@ -36,7 +36,7 @@
                   <tr>
                     <td>{{++$key }}</td>
                     <td>{{ $user->name }}</td>
-                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->email}}</td>
 
                     <td>
                       <form action="{{ route('users.destroy',$user->id) }}" method="POST">
@@ -44,6 +44,8 @@
                         @csrf
                         @method('DELETE')
                         <button onclick="return confirm('Are you sure want to delete this?')" type="submit" class="btn btn-outline-danger">Delete</button>
+                        <a class="btn btn-outline-primary" href="{{ route('user_reports',$user->id) }}">Report</a>
+
                       </form>
                     </td>
                   </tr>

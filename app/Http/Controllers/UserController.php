@@ -16,7 +16,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users=User::role('user')->get();
+        $users=auth()->user()->users;
+        
 
         return view('backend.users.index',compact('users'));
     }
@@ -50,9 +51,10 @@ class UserController extends Controller
 
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
-
+        $input['user_id'] = auth()->user()->id;
         $user = User::create($input);
-        $user->assignRole('user');
+
+       $user->assignRole('user');
         return redirect()->route('users.index')->with('success','User created successfully');
     }
 
@@ -99,6 +101,8 @@ class UserController extends Controller
         $input = $request->all();
 
         $user = User::find($id);
+        $user->user_id = auth()->user()->id;
+
         $user->update($input);
         $user->assignRole('user');
         return redirect()->route('users.index')->with('success','User updated successfully');

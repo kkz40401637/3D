@@ -368,15 +368,15 @@
         {{ csrf_field()}}
         <div class="modal-body">
              <div class="form-group">
-                                <label for="number">Add_Number</label>
-                                <!-- <input type="number" class="form-control" id="number" name="number" minlength="3" maxlength="3" placeholder="Number"> -->
-                                <input name="allnumber"
-                                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                    type = "number" class="form-control"
-                                    maxlength = "3"
-                                />
+                <label for="number">Add_Number</label>
+                  <!-- <input type="number" class="form-control" id="number" name="number" minlength="3" maxlength="3" placeholder="Number"> -->
+                  <input name="allnumber"
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                  type = "number" class="form-control"
+                  maxlength = "3"
+                />
 
-                                </div>
+            </div>
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-success">Submit</button>

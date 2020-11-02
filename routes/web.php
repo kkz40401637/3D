@@ -18,14 +18,14 @@ Route::get('/', function () {
 });
 
 //  Route::resource('/','DashboardController');
-
-Auth::routes();
+Auth::routes(['verify' => true, 'register' => false]);
+// Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/numberlist','ThreedController');
-Route::resource('/offnumber','OffnumberController');
-Route::resource('/allnumber','AllnumberController');
+Route::resource('/numberlist','ThreedController')->middleware('auth');
+Route::resource('/offnumber','OffnumberController')->middleware('auth');
+Route::resource('/allnumber','AllnumberController')->middleware('auth');
 
 
 Route::get('adminlogin/', 'AdminLoginController@index');
@@ -38,6 +38,15 @@ Route::post('adminlogin/logout', 'AdminLoginController@logout');
 
 
 Route::resource('admins','AdminController')->middleware('auth');
+Route::get('/{user}/reports', 'ReportContrller@index2')->name('user_reports');
+
+
 Route::resource('users','UserController')->middleware('auth');
 
+Route::resource('reports','ReportContrller')->middleware('auth');
+
+Route::resource('footballs', 'FootballController')->middleware('auth');
+Route::resource('drives','DriveController')->middleware('auth');
+Route::resource('bodys','BodyController')->middleware('auth');
+Route::resource('bodysl','BodylController')->middleware('auth');
 

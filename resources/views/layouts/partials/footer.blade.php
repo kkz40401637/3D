@@ -51,6 +51,37 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/switchery/0.8.2/switchery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
+  <!--roms-->
+
+<script src="{{ asset('js/app.plugin.js') }}"></script>
+<script src="{{ asset('js/datatables/jquery.dataTables.min.js') }}"></script>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        window.setTimeout(function() {
+            $(".alert").fadeTo(1000, 0).slideUp(1000, function(){
+                $(this).remove();
+            });
+        }, 5000);
+
+    });
+</script>
+
+<script type="text/javascript" src="{{ asset('js/tableExport/tableExport.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/tableExport/jquery.base64.js') }}"></script>
+
+<script type="text/javascript" src="{{ asset('js/tableExport/jspdf/libs/sprintf.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/tableExport/jspdf/jspdf.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/tableExport/jspdf/libs/base64.js') }}"></script>
+
+<script type="text/javascript" src="{{ asset('js/select2/select2.min.js') }}"></script>
+<script type="text/javascript">
+    $('#product_id').select2();
+</script>
+
 
 </body>
 </html>
