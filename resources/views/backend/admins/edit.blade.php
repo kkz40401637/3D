@@ -4,7 +4,7 @@
 
 <div class="main-panel">
     <div class="content-wrapper">
-      <div class="page-header">
+      {{-- <div class="page-header">
         <h3 class="page-title">
             Edit User
         </h3>
@@ -14,7 +14,7 @@
             <li class="breadcrumb-item active" aria-current="page">Edit Admin</li>
             </ol>
         </nav>
-      </div>
+      </div> --}}
       <div class="row">
         <div class="col-12 grid-margin">
           <div class="card">
@@ -24,7 +24,7 @@
                 @csrf
                 @method('PATCH')
                 <p class="card-description">
-                  User info
+                  Admin info
                 </p>
                 <div class="row">
                   <div class="col-md-6">

@@ -4,7 +4,7 @@
 
 <div class="main-panel">
   <div class="content-wrapper">
-    <div class="page-header">
+    {{-- <div class="page-header">
       <h3 class="page-title">
         User Lists
       </h3>
@@ -14,7 +14,7 @@
           <li class="breadcrumb-item active" aria-current="page">User Lists</li>
         </ol>
       </nav>
-    </div>
+    </div> --}}
     <div class="card">
       <div class="card-body">
         <h4 class="card-title">User Lists</h4>

@@ -17,7 +17,10 @@ class DriveController extends Controller
         $drives = Drive::all();
         return view('backend.football.show',compact('drives','users'));
     }
-
+    public function index2()
+    {
+        
+    }
     /**
      * Show the form for creating a new resource.
      *

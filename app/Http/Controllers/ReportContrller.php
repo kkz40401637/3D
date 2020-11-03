@@ -29,8 +29,6 @@ class ReportContrller extends Controller
         $users = User::all();
         $reports= $user->reports;
 
-
-
         // $reports = Report::all();
         return view('backend.report.report2',compact('users','reports','offnumbers','user'));
     }

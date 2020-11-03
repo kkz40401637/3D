@@ -18,7 +18,7 @@
                   <div class="card">
                     <div class="card-body">
                         <div class="border">
-                            <div class="d-flex justify-content-between">
+                            <div class="d-flex justify-content-belotween">
                             <button class="btn btn-outline-success" disabled><i>အမှတ်စဥ်</i>{{ $drive->id }}</button>
                             <button class="btn btn-primary btn-icon-text">
                                 <i class="fa fa-window-maximize"></i>

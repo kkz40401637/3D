@@ -4,12 +4,12 @@
     <li class="nav-item nav-profile">
       <div class="nav-link">
         <div class="profile-image">
-          <img src="{{ asset('assets/backend/images/shan_star.jpg') }}" alt="image"/>
+          <img src="{{ asset('assets/backend/images/logo-mini.png') }}" alt="image"/>
         </div>
         <div class="profile-name">
             @role('superadmin')
           <p class="name">
-            Welcome
+            {{-- Welcome --}}
             @if(Auth()->user()->hasRole('superadmin'))
             {{ Auth()->user()->name }}
             @endif
@@ -18,7 +18,7 @@
 
           @role('admin')
           <p class="name">
-            Welcome
+            {{-- Welcome --}}
             @if(Auth()->user()->hasRole('admin'))
             {{ Auth()->user()->name }}
             @endif
@@ -27,7 +27,7 @@
 
           @role('user')
           <p class="name">
-            Welcome
+            {{-- Welcome --}}
             @if(Auth()->user()->hasRole('user'))
             {{ Auth()->user()->name }}
             @endif
@@ -52,26 +52,35 @@
         </div>
       </div>
     </li>
-    <li class="nav-item">
+@role('superadmin')
+<li class="nav-item">
+  <a class="nav-link" href="home">
+    <i class="fa fa-home menu-icon"></i>
+    <span class="menu-title">Dashboard</span>
+  </a>
+</li>
+@endrole
+@role('superadmin')
+<li class="nav-item">
+  <a class="nav-link" href="home">
+    <i class="fa fa-home menu-icon"></i>
+    <span class="menu-title">Dashboard</span>
+  </a>
+</li>
+@endrole
 
-      <a class="nav-link" href="adminlogin">
-
-        <i class="fa fa-home menu-icon"></i>
-        <span class="menu-title">Dashboard</span>
-      </a>
-    </li>
 @role('superadmin')
     <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#admins" aria-expanded="false" aria-controls="admins">
             <i class="fas fa-user-shield menu-icon"></i>
-          <span class="menu-title">Admins   </span>
+          <span class="menu-title">လက်ခွဲဒိုင်များ</span>
           <i class="menu-arrow"></i>
         </a>
         <div class="collapse" id="admins">
           <ul class="nav flex-column sub-menu">
             
-            <li class="nav-item"> <a class="nav-link" href="{{ route('admins.create') }}"> Create Admin</a></li>
-            <li class="nav-item"> <a class="nav-link" href="{{ route('admins.store') }}"> List Admin </a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('admins.create') }}">ဒိုင်းများထည့်မယ်</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('admins.store') }}"> လက်ခွဲဒိုင်များစာရင်း </a></li>
 
           </ul>
         </div>
@@ -103,11 +112,10 @@
       <ul class="nav flex-column sub-menu">
         <li class="nav-item"> <a class="nav-link" href="{{ route('footballs.create') }}">မောင်းကြေးဖွင့်မယ်</a></li>
         <li class="nav-item"> <a class="nav-link" href="{{ route('bodys.create') }}">ဘောဒီကြေးဖွင့်မယ်</a></li>
-
+        <li class="nav-item"> <a class="nav-link" href="">မောင်းထိုးသားများ</a></li>
       </ul>
     </div>
   </li>
-
 
 @endrole
 
@@ -131,7 +139,7 @@
     </li>
 @endrole
    
-
+@role('user')
     <li class="nav-item">
       <a class="nav-link" href="{{url('reports')}}">
        <i class="fas fa-file menu-icon"></i>
@@ -167,7 +175,7 @@
 
         </a>
     </li>
-
+@endrole
   
   </ul>
 </nav>

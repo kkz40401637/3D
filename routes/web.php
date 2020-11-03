@@ -21,7 +21,7 @@ Route::get('/', function () {
 Auth::routes(['verify' => true, 'register' => false]);
 // Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/numberlist','ThreedController')->middleware('auth');
 Route::resource('/offnumber','OffnumberController')->middleware('auth');
