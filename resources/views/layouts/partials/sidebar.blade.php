@@ -60,14 +60,7 @@
   </a>
 </li>
 @endrole
-@role('superadmin')
-<li class="nav-item">
-  <a class="nav-link" href="home">
-    <i class="fa fa-home menu-icon"></i>
-    <span class="menu-title">Dashboard</span>
-  </a>
-</li>
-@endrole
+
 
 @role('superadmin')
     <li class="nav-item">
@@ -112,7 +105,7 @@
       <ul class="nav flex-column sub-menu">
         <li class="nav-item"> <a class="nav-link" href="{{ route('footballs.create') }}">မောင်းကြေးဖွင့်မယ်</a></li>
         <li class="nav-item"> <a class="nav-link" href="{{ route('bodys.create') }}">ဘောဒီကြေးဖွင့်မယ်</a></li>
-        <li class="nav-item"> <a class="nav-link" href="">မောင်းထိုးသားများ</a></li>
+        <li class="nav-item"> <a class="nav-link" href="#">လောင်းထားသည့်မောင်းများ</a></li>
       </ul>
     </div>
   </li>

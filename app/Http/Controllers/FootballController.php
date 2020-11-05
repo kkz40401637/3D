@@ -25,7 +25,9 @@ class FootballController extends Controller
      */
     public function create()
     {
-        return view('backend.football.create');
+        
+        $footballs = Football::all();
+        return view('backend.football.create',compact('footballs'));
     }
 
     /**
@@ -95,6 +97,14 @@ class FootballController extends Controller
      */
     public function destroy($id)
     {
-        //
+    
+        Football::find($id)->delete();
+        return redirect()->route('footballs.create')->with('success','deleted successfully');
+    }
+    public function deleteAll(Request $request)
+    {
+        $ids = $request->ids;
+        DB::table("footballs")->whereIn('id',explode(",",$ids))->delete();
+        return response()->json(['success'=>"Deleted successfully."]);
     }
 }

@@ -63,4 +63,12 @@ class User extends Authenticatable implements JWTSubject
 
         return $this->hasMany('App\User');
      }
+    public function drives(){
+
+        return $this->hasMany('App\Drive');
+     }
+    public function bodyls(){
+
+        return $this->hasMany('App\Bodyl');
+     }
 }

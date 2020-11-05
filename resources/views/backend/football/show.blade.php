@@ -19,10 +19,10 @@
                     <div class="card-body">
                         <div class="border">
                             <div class="d-flex justify-content-belotween">
-                            <button class="btn btn-outline-success" disabled><i>အမှတ်စဥ်</i>{{ $drive->id }}</button>
+                            {{-- <button class="btn btn-outline-success" disabled><i>အမှတ်စဥ်</i>{{ $drive->id }}</button> --}}
                             <button class="btn btn-primary btn-icon-text">
                                 <i class="fa fa-window-maximize"></i>
-                                {{ $drive->money }}
+                                {{ $drive->money }}/ကျပ်မောင်း
                             </button>
                             </div>
                         </div>

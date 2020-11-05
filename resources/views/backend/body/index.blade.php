@@ -86,7 +86,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                            <input type="text" class="form-control" id="moneya" name="moneya" placeholder="ငွေပမာဏရိုက်ထည့်ပါ">
+                            <input type="text" class="form-control" id="moneya" name="moneya" value="No" placeholder="ငွေပမာဏရိုက်ထည့်ပါ">
                           </div>
                         </div>
 

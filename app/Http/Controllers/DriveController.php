@@ -14,12 +14,17 @@ class DriveController extends Controller
      */
     public function index()
     {
-        $drives = Drive::all();
-        return view('backend.football.show',compact('drives','users'));
+   
+        $users = User::all();
+        $drives= auth()->user()->drives;
+        return view('backend.football.show',compact('users','drives'));
     }
-    public function index2()
+      public function index2(User $user)
     {
-        
+        $users = User::all();
+        $drives= $user->drives;
+
+        return view('backend.football.show2',compact('users','drives','user'));
     }
     /**
      * Show the form for creating a new resource.

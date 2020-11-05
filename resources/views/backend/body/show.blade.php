@@ -7,13 +7,15 @@
           <div class="page-header">
             <h4 class="card-title">
                      @if(Auth()->user()->hasRole('user'))
-                        {{ Auth()->user()->name }}၏မောင်းစာရင်းများ
+                        {{ Auth()->user()->name }}၏ဘောဒီစာရင်းများ
                     @endif</h4>
                   </h4>
+             <h4 class="card-title"> 
+            
           </div>
   
             <div class="row">
-                 @foreach ($bodysl as $bodys)
+                 @foreach ($bodyls as $bodys)
                 <div class="col-md-4 grid-margin stretch-card">
                   <div class="card">
                     <div class="card-body">

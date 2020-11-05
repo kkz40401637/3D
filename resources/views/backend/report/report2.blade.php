@@ -1,5 +1,5 @@
 @extends('layouts.partials.master')
-@section('title', 'Dashboard')
+@section('title', 'Report')
 @section('content')
 
 <div class="main-panel">

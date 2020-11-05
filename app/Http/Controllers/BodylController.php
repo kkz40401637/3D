@@ -15,10 +15,17 @@ class BodylController extends Controller
      */
     public function index()
     {
-        $bodysl = Bodyl::all();
-        return view('backend.body.show',compact('bodysl'));
+        $users = User::all();
+        $bodyls= auth()->user()->bodyls;
+        return view('backend.body.show',compact('users','bodyls'));
     }
-
+    public function index2(User $user)
+    {
+        
+        $users = User::all();
+        $bodyls= $user->bodyls;
+        return view('backend.body.show2',compact('users','bodyls','user'));
+    }
     /**
      * Show the form for creating a new resource.
      *

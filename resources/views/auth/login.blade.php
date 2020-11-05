@@ -4,7 +4,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Gold | Login</title>
+  <title>GOLD</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{ asset('assets/backend/vendors/iconfonts/font-awesome/css/all.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/backend/css/vendor.bundle.base.css') }}">
@@ -26,10 +26,11 @@
           <div class="col-lg-6 d-flex align-items-center justify-content-center">
             <div class="auth-form-transparent text-left p-3">
               <div class="brand-logo">
-                {{-- <img src="{{ asset('assets/backend/images/shan_star.jpg') }}" alt="logo"> --}}
+                
               </div>
-              <h4>Welcome back!</h4>
-              <h6 class="font-weight-light">Happy to see you again!</h6>
+              <a href="/">
+              <h4>Welcome !</h4><br><hr>
+              </a>
               <form method="POST" action="{{url('/adminlogin/')}}">
               @csrf
                 <div class="form-group">
@@ -67,15 +68,15 @@
                   </div>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">
-                  <div class="form-check">
+                  {{-- <div class="form-check">
                     <label class="form-check-label text-muted">
                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                       Keep me signed in
                     </label>
-                  </div>
-                  @if (Route::has('password.request'))
+                  </div> --}}
+                  {{-- @if (Route::has('password.request'))
                         <a href="{{ route('password.request') }}" class="auth-link text-black">Forgot password?</a>
-                  @endif
+                  @endif --}}
                 </div>
                 <div class="my-3">
                   <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">LOGIN</button>
