@@ -50,15 +50,22 @@ class ReportContrller extends Controller
      */
     public function store(Request $request)
     {
-           $reports = new Report();
-           $reports->user_id= auth()->user()->id;
-
-           $reports->number = $request->input('number');
-           $reports->ammount = $request->input('ammount');
-
-           if($reports->save());
-
-           return redirect()->back()->with('success', 'Number information inserted successfully!');
+        if(auth()->user()->money < $request->ammount){
+         
+           return back()->with('error','လူကြီးမင်း၏လက်ကျန်ငွေမလုံလောက်ပါ၍ထပ်မံဖြည့်သွင့်ပါ');}
+           else{
+            $reports = new Report();
+            $reports->user_id= auth()->user()->id;
+ 
+            $reports->number = $request->input('number');
+            $reports->ammount = $request->input('ammount');
+ 
+            if($reports->save());
+ 
+            $user = User::find(auth()->user()->id);
+            $user->money = auth()->user()->money-$reports->ammount;
+            $user->save();
+            return redirect()->back()->with('success', 'လူးကြီးမင်း၏လုပ်ဆောင်မူ့အောင်မြင်ပါသည်');}
     }
 
     /**

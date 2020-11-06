@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Report;
 use Illuminate\Support\Facades\Hash;
 use DB;
 
@@ -43,7 +44,6 @@ class UserController extends Controller
 
             'name' => 'required',
             'email'=> 'required|email',
-
             'password' => 'required|same:confirm-password',
         ]);
 
@@ -89,12 +89,11 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
 
-        $this->validate($request, [
-            'name' => 'required',
-            'email'=> 'required|email',
-
-            'password' => 'required|same:confirm-password',
-        ]);
+        // $this->validate($request, [
+        //     'name' => 'required',
+        //     'email'=> 'required|email',
+        //     'password' => 'required|same:confirm-password',
+        // ]);
 
         $input = $request->all();
 

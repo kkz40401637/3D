@@ -133,23 +133,38 @@
 @endrole
    
 @role('user')
+
+    <li class="nav-item">
+      <a class="nav-link" href="">
+        <i class="fas fa-usd-square menu-icon"></i>
+        <span class="menu-title">ငွေးသွင်း/ငွေထုတ်</span>
+      </a>
+    </li>
+
     <li class="nav-item">
       <a class="nav-link" href="{{url('reports')}}">
-       <i class="fas fa-file menu-icon"></i>
+        <i class="fab fa-css3-alt menu-icon"></i>
         <span class="menu-title">ချဲထိုးမယ်</span>
       </a>
     </li>
 
     <li class="nav-item">
+      <a class="nav-link" href="{{url('towds/create')}}">
+      <i class="fab fa-draft2digital menu-icon"></i>
+        <span class="menu-title">နှစ်လုံးထိုးမယ်</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
       <a class="nav-link" href="{{ route('footballs.index') }}">
-       <i class="fas fa-file menu-icon"></i>
+        <i class="fas fa-futbol menu-icon"></i>
         <span class="menu-title">မောင်းလောင်းမယ်</span>
       </a>
     </li>
 
     <li class="nav-item">
       <a class="nav-link" href="{{ route('bodys.index') }}">
-       <i class="fas fa-file menu-icon"></i>
+        <i class="fas fa-futbol menu-icon"></i>
         <span class="menu-title">ဘောဒီလောင်းမယ်</span>
       </a>
     </li>
@@ -163,11 +178,18 @@
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{ route('bodysl.index') }}">
-         <i class="fas fa-table menu-icon"></i>
+          <i class="fas fa-futbol menu-icon"></i>
           <span class="menu-title">လောင်းထားသည့်ဘောဒီများ</span>
 
         </a>
     </li>
+
+<li class="nav-item">
+  <a class="nav-link" href="{{url('towds')}}">
+    <i class="fab fa-draft2digital menu-icon"></i>
+    <span class="menu-title">နှစ်လုံးထိုးထားသည့်ဂဏန်းများ</span>
+  </a>
+</li>
 @endrole
   
   </ul>

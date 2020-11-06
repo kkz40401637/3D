@@ -26,14 +26,14 @@
                   </div>
                   <div class="col-md-6">
                     <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Email</label>
+                    {{-- <label class="col-sm-3 col-form-label">Email</label> --}}
                     <div class="col-sm-9">
-                      <input class="@error('email') is-invalid @enderror form-control" name="email" minlength="2" type="text" value="{{ $user->email }}" autocomplete="email" required />
+                      {{-- <input class="@error('email') is-invalid @enderror form-control" name="email" minlength="2" type="text" value="{{ $user->email }}" autocomplete="email" required />
                       @error('email')
                         <span class="invalid-feedback" role="alert">
                           <strong>{{ $message }}</strong>
                         </span>
-                        @enderror
+                        @enderror --}}
                     </div>
                   </div>
                 </div>
@@ -41,17 +41,22 @@
                 <div class="row">
                     <div class="col-md-6">
                     <div class="form-group row">
-                      <label class="col-sm-3 col-form-label">Password</label>
+                       <label class="col-sm-3 col-form-label">Money</label>
                       <div class="col-sm-9">
-                        <input class="form-control" name="password"type="password" required />
+                        <input class="@error('name') is-invalid @enderror form-control" name="money" type="number" value="{{ $user->money }}" autocomplete="money" autofocus required />
+                        @error('money')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                          @enderror
                       </div>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Confirm Password</label>
+                    {{-- <label class="col-sm-3 col-form-label">Confirm Password</label> --}}
                     <div class="col-sm-9">
-                        <input class="form-control" name="confirm-password" type="password" required />
+                        {{-- <input class="form-control" name="confirm-password" type="password" required /> --}}
                     </div>
                   </div>
                 </div>

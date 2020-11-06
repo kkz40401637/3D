@@ -41,6 +41,7 @@ Route::resource('admins','AdminController')->middleware('auth');
 Route::get('/{user}/reports', 'ReportContrller@index2')->name('user_reports');
 Route::get('/{user}/drives', 'DriveController@index2')->name('user_drives');
 Route::get('/{user}/bodysl', 'BodylController@index2')->name('user_bodylsl');
+Route::get('/{user}/towds','TowdController@index2')->name('user_towds');
 
 Route::resource('users','UserController')->middleware('auth');
 
@@ -48,8 +49,8 @@ Route::resource('reports','ReportContrller')->middleware('auth');
 
 Route::resource('footballs', 'FootballController')->middleware('auth');
 
-Route::delete('footbal-multiple-category', ['as'=>'footbal.multiple-delete','uses'=>'FootballController@deleteAll']);
 Route::resource('drives','DriveController')->middleware('auth');
 Route::resource('bodys','BodyController')->middleware('auth');
 Route::resource('bodysl','BodylController')->middleware('auth');
+Route::resource('towds','TowdController')->middleware('auth');
 

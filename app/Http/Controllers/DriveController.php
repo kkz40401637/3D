@@ -45,24 +45,32 @@ class DriveController extends Controller
     public function store(Request $request)
     {
        
-        $foots = new Drive();
-        $foots->user_id= auth()->user()->id;
-        $foots->foot = $request->foot;
-        $foots->foota = $request->foota;
-        $foots->footb = $request->footb;
-        $foots->footc = $request->footc;
-        $foots->footd = $request->footd;
+        if(auth()->user()->money < $request->money){
+         
+           return back()->with('success','လူကြီးမင်း၏လက်ကျန်ငွေမလုံလောက်ပါ၍ထပ်မံဖြည့်သွင့်ပါ');}
+           else{
+            $foots = new Drive();
+            $foots->user_id= auth()->user()->id;
+ 
+            $foots->foot = $request->foot;
+            $foots->foota = $request->foota;
+            $foots->footb = $request->footb;
+            $foots->footc = $request->footc;
+            $foots->footd = $request->footd;
 
-        $foots->foote = $request->foote;
-        $foots->footf = $request->footf;
-        $foots->footg = $request->footg;
-        $foots->footh = $request->footh;
-        $foots->footi = $request->footi;
-        $foots->money = $request->money;
+            $foots->foote = $request->foote;
+            $foots->footf = $request->footf;
+            $foots->footg = $request->footg;
+            $foots->footh = $request->footh;
+            $foots->footi = $request->footi;
+            $foots->money = $request->money;
 
-           if($foots->save());
+               if($foots->save());
 
-           return redirect()->back()->with('success', 'Number information inserted successfully!');
+            $user = User::find(auth()->user()->id);
+            $user->money = auth()->user()->money-$foots->money;
+            $user->save();
+            return redirect()->back()->with('success', 'လူးကြီးမင်း၏လုပ်ဆောင်မူ့အောင်မြင်ပါသည်');}
     }
 
     /**

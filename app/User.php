@@ -26,7 +26,7 @@ class User extends Authenticatable implements JWTSubject
      */
 
     protected $fillable = [
-        'name', 'email', 'password','user_id',
+        'name', 'email','money', 'password','user_id',
     ];
 
     /**
@@ -70,5 +70,9 @@ class User extends Authenticatable implements JWTSubject
     public function bodyls(){
 
         return $this->hasMany('App\Bodyl');
+     }
+     public function towds(){
+         
+        return $this->hasMany('App\Towd');
      }
 }

@@ -62,7 +62,9 @@
                     <form action="{{ route('bodysl.store') }}" method="post" enctype="multipart/form-data">
                       {{ csrf_field()}}
                       <div class="form-group">
-                             <label for="customer">အကောင့်နာမည်</label>
+                             <label for="customer">@if(Auth()->user()->hasRole('user'))
+                               လက်ကျန်ငွေ ( {{  Auth()->user()->money  }} )ကျပ်
+                            @endif</label>
                             @if(Auth()->user()->hasRole('user'))
                               <select class="form-control" name="user_id">
                                 <option>{{ Auth()->user()->name }}</option>
@@ -86,7 +88,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                            <input type="text" class="form-control" id="moneya" name="moneya" value="No" placeholder="ငွေပမာဏရိုက်ထည့်ပါ">
+                            <input type="number" class="form-control" id="moneya" name="moneya" value="No" placeholder="ငွေပမာဏရိုက်ထည့်ပါ">
                           </div>
                         </div>
 
@@ -105,7 +107,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                            <input type="text" class="form-control" id="moneyb" name="moneyb" placeholder="ငွေပမာဏရိုက်ထည့်ပါ">
+                            <input type="number" class="form-control" id="moneyb" name="moneyb" placeholder="ငွေပမာဏရိုက်ထည့်ပါ">
                           </div>
                         </div>
 
@@ -124,7 +126,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                            <input type="text" class="form-control" id="moneyc" name="monec" placeholder="ငွေပမာဏရိုက်ထည့်ပါ">
+                            <input type="number" class="form-control" id="moneyc" name="monec" placeholder="ငွေပမာဏရိုက်ထည့်ပါ">
                           </div>
                         </div>
 
@@ -143,7 +145,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                            <input type="text" class="form-control" id="moneyd" name="moneyd" placeholder="ငွေပမာဏရိုက်ထည့်ပါ">
+                            <input type="number" class="form-control" id="moneyd" name="moneyd" placeholder="ငွေပမာဏရိုက်ထည့်ပါ">
                           </div>
                         </div>
 
@@ -162,7 +164,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                            <input type="text" class="form-control" id="moneye" name="moneye" placeholder="ငွေပမာဏရိုက်ထည့်ပါ">
+                            <input type="number" class="form-control" id="moneye" name="moneye" placeholder="ငွေပမာဏရိုက်ထည့်ပါ">
                           </div>
                         </div>
                       </div>

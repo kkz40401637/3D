@@ -18,19 +18,16 @@
                     <table class="table">
                       <thead>
                         <tr>
-                            <th class="font-weight-bold">နံပါတ်</th>
                             <th class="font-weight-bold">ကြေး</th>
                             <th class="font-weight-bold">အိမ်ကွင်း</th>
                             <th class="font-weight-bold">ဂိုးပေါင်း</th>
                             <th class="font-weight-bold">အ၀ေးကွင်း</th>
                             <th class="font-weight-bold">ကြေး</th>
-                            <th class="font-weight-bold">ဖျက်မယ်</th>
                         </tr>
                       </thead>
                       <tbody>
                             @foreach ($footballs as $football)
                             <tr>
-                                <td>{{ $football->id }}</td>
                                 <td>
                                 <h4><span class="badge badge-danger">{{ $football->plus }}</span></h4>
                                 <td>
@@ -47,7 +44,10 @@
                                 </td>
 
                                <td>
+                               @hasanyrole('superadmin|admin')
                               <button class="btn btn-outline-primary">ဖျက်မယ်</button>
+                               @endhasanyrole
+                              
                             </td>
                             </tr>
                             @endforeach
@@ -58,6 +58,7 @@
                   </div>
                 </div>
               </div>
+              
             </div>
           @role('user')
             <div class="col-md-4 grid-margin stretch-card">
@@ -66,7 +67,9 @@
                     <form action="{{ route('drives.store') }}" method="post" enctype="multipart/form-data">
                       {{ csrf_field()}}
                       <div class="form-group">
-                             <label for="customer">အကောင့်နာမည်</label>
+                             <label for="customer">@if(Auth()->user()->hasRole('user'))
+                               လက်ကျန်ငွေ ( {{  Auth()->user()->money  }} )ကျပ်
+                            @endif</label>
                             @if(Auth()->user()->hasRole('user'))
                               <select class="form-control" name="user_id">
                                 <option>{{ Auth()->user()->name }}</option>
@@ -209,7 +212,7 @@
                         </div>
                         
                         <div class="form-group">
-                             <input type="text" class="form-control" id="money" name="money" placeholder="ငွေပမာဏရိုက်ထည့်ပါ">
+                             <input type="number" class="form-control" id="money" name="money" placeholder="ငွေပမာဏရိုက်ထည့်ပါ">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                             

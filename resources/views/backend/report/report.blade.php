@@ -1,5 +1,5 @@
 @extends('layouts.partials.master')
-@section('title', 'Report')
+@section('title', 'Dashboard')
 @section('content')
 
 <div class="main-panel">
@@ -10,9 +10,11 @@
    <div class="card">
                 <div class="card-body">
                   <h4 class="card-title"> 
+                   
                     @if(Auth()->user()->hasRole('user'))
-                        {{ Auth()->user()->name }}
-                    @endif</h4>
+                       ({{ Auth()->user()->name }})၏ လက်ကျန်ငွေ ( {{  Auth()->user()->money  }} )ကျပ်
+                    @endif
+                  </h4>
                   <!-- <p class="card-description">Horizontal bootstrap tab</p> -->
                   <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
@@ -70,7 +72,7 @@
                           </td>
                           {{-- @if(auth()->user()->can('see this post')&& $some_other_condition) --}}
                           <td><label class="badge badge-danger badge-pill"><h5>{{ $report->number }}</h5></label></td>
-                          <td><label class="badge badge-success badge-pill"><h5>${{ $report->ammount }}</h5></label></td>
+                          <td><label class="badge badge-success badge-pill"><h5>{{ $report->ammount }}MMK</h5></label></td>
                           {{-- @endif --}}
                         </tr>
 

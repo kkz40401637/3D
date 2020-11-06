@@ -67,6 +67,25 @@
                 </div>
             </div>
 
+                <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Money</label>
+                        <div class="col-sm-9">
+                          <input class="@error('money') is-invalid @enderror form-control" name="money" type="number" value="{{ old('money') }}" autocomplete="money" autofocus required />
+                   
+                        </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                        
+                      </div>
+                    </div>
+                </div>
+              
+
+
                 <button type="submit" class="btn btn-primary mr-2">Submit</button>
                 <a href="{{ url()->previous() }}" class="btn btn-light">Back</a>
               </form>

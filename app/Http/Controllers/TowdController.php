@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Body;
-use App\Bodyl;
+use App\Towd;
 use App\User;
 use Illuminate\Http\Request;
 
-class BodylController extends Controller
+class TowdController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,25 +14,26 @@ class BodylController extends Controller
      */
     public function index()
     {
+       
         $users = User::all();
-        $bodyls= auth()->user()->bodyls;
-        return view('backend.body.show',compact('users','bodyls'));
+        $towds= auth()->user()->towds;
+        // $reports = Report::all();
+        return view('backend.towd.index',compact('users','towds','user'));
+
     }
-    public function index2(User $user)
-    {
-        
-        $users = User::all();
-        $bodyls= $user->bodyls;
-        return view('backend.body.show2',compact('users','bodyls','user'));
-    }
+     
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function create()
     {
-        //
+        $users = User::all();
+        $towds= auth()->user()->towds;
+        return view('backend.towd.create',compact('towds','users'));
+
     }
 
     /**
@@ -44,35 +44,36 @@ class BodylController extends Controller
      */
     public function store(Request $request)
     {
-        if(auth()->user()->money < $request->moneya){
+         if(auth()->user()->money < $request->moneya){
          
            return back()->with('error','လူကြီးမင်း၏လက်ကျန်ငွေမလုံလောက်ပါ၍ထပ်မံဖြည့်သွင့်ပါ');}
            else{
-        $bodysl = new Bodyl();
-        $bodysl->user_id= auth()->user()->id;
+        $towds = new Towd();
+        $towds->user_id= auth()->user()->id;
         
-        $bodysl->bodya = $request->bodya;
-        $bodysl->moneya = $request->moneya;
+        $towds->towda = $request->towda;
+        $towds->moneya = $request->moneya;
 
-        $bodysl->bodyb = $request->bodyb;
-        $bodysl->moneyb = $request->moneyb;
+        $towds->towdb = $request->towdb;
+        $towds->moneyb = $request->moneyb;
 
-        $bodysl->bodyc = $request->bodyc;
-        $bodysl->moneyc = $request->moneyc;
+        $towds->towdc = $request->towdc;
+        $towds->moneyc = $request->moneyc;
 
-        $bodysl->bodyd = $request->bodyd;
-        $bodysl->moneyd = $request->moneyd;
+        $towds->towdd = $request->towdd;
+        $towds->moneyd = $request->moneyd;
 
-        $bodysl->bodye = $request->bodye;
-        $bodysl->moneye = $request->moneye;
+        $towds->towde = $request->towde;
+        $towds->moneye = $request->moneye;
+
        
-        if($bodysl->save());
+       
+        if($towds->save());
         $user = User::find(auth()->user()->id);
-        $user->money = auth()->user()->money-$bodysl->moneya;
+        $user->money = auth()->user()->money-$towds->moneya;
         $user->save();
 
         return redirect()->back()->with('success', 'လူးကြီးမင်း၏လုပ်ဆောင်မူ့အောင်မြင်ပါသည်');}
-           
     }
 
     /**
