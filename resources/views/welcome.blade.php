@@ -26,7 +26,7 @@
                 @if (Route::has('login'))
                     <div class="top-right links">
                         @auth
-                            <a href="{{ url('/home') }}">Home</a>
+                            <a href="{{ url('admins') }}">Dashboard</a>
                         @else
                             <a href="{{ route('login') }}" style="color:red"><h2>အကောင့်၀င်မယ်</h2></a>
 

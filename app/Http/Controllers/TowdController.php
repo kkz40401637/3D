@@ -21,6 +21,14 @@ class TowdController extends Controller
         return view('backend.towd.index',compact('users','towds','user'));
 
     }
+     public function index2(User $user)
+    {
+        $users = User::all();
+        $towds= $user->towds;
+
+        // $reports = Report::all();
+        return view('backend.towd.index2',compact('users','towds','user'));
+    }
      
     /**
      * Show the form for creating a new resource.

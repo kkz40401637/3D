@@ -17,7 +17,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users=auth()->user()->users;
+    
         return view('backend.users.index',compact('users'));
     }
 

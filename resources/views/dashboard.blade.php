@@ -1,14 +1,14 @@
 @extends('layouts.partials.master')
-@section('title', 'Dashboard')
+@section('title', '')
 @section('content')
 
 <div class="main-panel">
   <div class="content-wrapper">
-    <div class="page-header">
+    {{-- <div class="page-header">
       <h3 class="page-title">
         Dashboard
       </h3>
-    </div>
+    </div> --}}
     <div class="row grid-margin">
       <div class="col-12">
         <div class="card card-statistics">
@@ -19,7 +19,7 @@
                     <i class="icon-sm fa fa-user mr-2"></i>
                     New users
                   </p>
-                  <h2>54000</h2>
+                  <h2></h2>
                   <label class="badge badge-outline-success badge-pill">2.7% increase</label>
                 </div>
                 <div class="statistics-item">

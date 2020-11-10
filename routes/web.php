@@ -21,12 +21,11 @@ Route::get('/', function () {
 Auth::routes(['verify' => true, 'register' => false]);
 // Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/dashboard', 'HomeController@index')->name('home');
 
 Route::resource('/numberlist','ThreedController')->middleware('auth');
 Route::resource('/offnumber','OffnumberController')->middleware('auth');
 Route::resource('/allnumber','AllnumberController')->middleware('auth');
-
 
 Route::get('adminlogin/', 'AdminLoginController@index');
 

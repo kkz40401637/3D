@@ -52,9 +52,9 @@
         </div>
       </div>
     </li>
-@role('superadmin')
+@role('superadmin|admin')
 <li class="nav-item">
-  <a class="nav-link" href="home">
+  <a class="nav-link" href="{{url('adminlogin')}}">
     <i class="fa fa-home menu-icon"></i>
     <span class="menu-title">Dashboard</span>
   </a>
@@ -81,7 +81,7 @@
 @endrole
 
 @role('admin')
-<li class="nav-item">
+{{-- <li class="nav-item">
     <a class="nav-link" data-toggle="collapse" href="#users" aria-expanded="false" aria-controls="users">
         <i class="fas fa-user-shield menu-icon"></i>
       <span class="menu-title">ထိုးသားများ</span>
@@ -108,12 +108,36 @@
         <li class="nav-item"> <a class="nav-link" href="#">လောင်းထားသည့်မောင်းများ</a></li>
       </ul>
     </div>
-  </li>
+  </li> --}}
+<li class="nav-item">
+  <a class="nav-link" href="{{ route('users.create') }}">
+    <i class="fas fa-user-shield menu-icon"></i>
+    <span class="menu-title">ထိုးသားများထည့်မယ်</span>
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{{ route('users.store') }}">
+    <i class="fas fa-user-shield menu-icon"></i>
+    <span class="menu-title">ထိုးသားများစာရင်း</span>
+  </a>
+</li>
+ <li class="nav-item">
+  <a class="nav-link" href="{{ route('footballs.create') }}">
+    <i class="fas fa-futbol menu-icon"></i>
+    <span class="menu-title">မောင်းကြေးဖွင့်မယ်</span>
+  </a>
+</li>
+ <li class="nav-item">
+  <a class="nav-link" href="{{ route('bodys.create') }}">
+    <i class="fas fa-futbol menu-icon"></i>
+    <span class="menu-title">ဘောဒီကြေးဖွင့်မယ်</span>
+  </a>
+</li>
 
 @endrole
 
 @role('admin')
-    <li class="nav-item d-none d-lg-block">
+    {{-- <li class="nav-item d-none d-lg-block">
       <a class="nav-link" data-toggle="collapse" href="#sidebar-layouts" aria-expanded="false" aria-controls="sidebar-layouts">
         <i class="fas fa-users menu-icon"></i>
 
@@ -125,11 +149,15 @@
 
             <li class="nav-item"> <a class="nav-link" href="{{url('offnumber')}}">ပိတ်ဂဏန်းများ</a></li>
             
-            {{-- <li class="nav-item"> <a class="nav-link" href="{{url('allnumber')}}">Number_List</a></li> --}}
-
         </ul>
       </div>
-    </li>
+    </li> --}}
+ <li class="nav-item">
+  <a class="nav-link" href="{{url('offnumber')}}">
+    <i class="fab fa-css3-alt menu-icon"></i>
+    <span class="menu-title">သုံးလုံးပိတ်ဂဏန်းများ</span>
+  </a>
+</li>
 @endrole
    
 @role('user')

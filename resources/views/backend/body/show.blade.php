@@ -22,7 +22,7 @@
                        
                             <div class="border-top">
                                 <div class="d-flex justify-content-between">
-                                <button class="btn btn-outline-success" disabled>{{ $bodys->bodya }}</button>
+                                <div class="btn btn-dark">{{ $bodys->bodya }}</div>
                                 <button class="btn btn-primary btn-icon-text">
                                     <i class="fa fa-window-maximize"></i>
                                     {{ $bodys->moneya }}
@@ -31,7 +31,7 @@
                             </div>
                          <div class="border-top pt-3">
                             <div class="d-flex justify-content-between">
-                            <button class="btn btn-outline-success" disabled>{{ $bodys->bodyb }}</button>
+                            <div class="btn btn-dark">{{ $bodys->bodyb }}</div>
                             <button class="btn btn-primary btn-icon-text">
                                 <i class="fa fa-window-maximize"></i>
                                 {{ $bodys->moneyb }}
@@ -40,7 +40,7 @@
                         </div>
                         <div class="border-top pt-3">
                             <div class="d-flex justify-content-between">
-                            <button class="btn btn-outline-success" disabled>{{ $bodys->bodyc }}</button>
+                            <button class="btn btn-dark">{{ $bodys->bodyc }}</button>
                             <button class="btn btn-primary btn-icon-text">
                                 <i class="fa fa-window-maximize"></i>
                                 {{ $bodys->moneyc }}
@@ -49,7 +49,7 @@
                         </div>
                         <div class="border-top pt-3">
                             <div class="d-flex justify-content-between">
-                            <button class="btn btn-outline-success" disabled>{{ $bodys->bodyd }}</button>
+                            <button class="btn btn-dark">{{ $bodys->bodyd }}</button>
                             <button class="btn btn-primary btn-icon-text">
                                 <i class="fa fa-window-maximize"></i>
                                 {{ $bodys->moneyd }}
@@ -58,15 +58,23 @@
                         </div>
                         <div class="border-top pt-2">
                             <div class="d-flex justify-content-between">
-                            <button class="btn btn-outline-success" disabled>{{ $bodys->bodye }}</button>
+                            <button class="btn btn-dark">{{ $bodys->bodye }}</button>
                             <button class="btn btn-primary btn-icon-text">
                                 <i class="fa fa-window-maximize"></i>
                                 {{ $bodys->moneye }}
                             </button>
                             </div>
                         </div>
-                        
 
+                        <div class="border-top pt-2">
+                            <div class="d-flex justify-content-between">
+                            <button class="btn btn-success btn-icon-text" style="margin:auto;">
+                                 + <i class="fa fa-window-maximize"></i>
+                                {{ $bodys->moneya + $bodys->moneyb + $bodys->moneyc + $bodys->moneyd + $bodys->moneye}}/ကျပ်</button>
+                            </button>
+                            </div>
+                        </div>
+                    
                     </div>
                   </div>
                 </div>

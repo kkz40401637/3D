@@ -1,5 +1,5 @@
 @extends('layouts.partials.master')
-@section('title', 'Dashboard')
+@section('title', 'Admin')
 @section('content')
 
 <div class="main-panel">
@@ -19,7 +19,7 @@
                     <i class="icon-sm fa fa-user mr-2"></i>
                     New users
                   </p>
-                  <h2>54000</h2>
+                  <h2>{{ $users }}</h2>
                   <label class="badge badge-outline-success badge-pill">2.7% increase</label>
                 </div>
                 <div class="statistics-item">

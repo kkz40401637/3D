@@ -47,7 +47,7 @@
                 <i class="fa fa-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="ajax to load the data."></i>
 
             </header>
-                     <table class="table table-striped m-b-none" data-ride="datatables" id="table">
+                     <table class="table table-striped m-b-none" data-ride="datatables" id="data">
                       <thead>
                         <tr>
                          <th></th>
@@ -80,9 +80,13 @@
                         @endforeach
 
                       </tbody>
-
+                      <tfoot>
+                      <tr>
+                       <th colspan="2">Total</th>
+                        
+                      </tr>
+                      
                     </table>
-
                   </div>
                 </div>
 
@@ -164,4 +168,5 @@
     </div>
   </div>
 </div>
+
 @endsection

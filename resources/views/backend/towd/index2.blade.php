@@ -62,21 +62,6 @@
                                 </button>
                                 </div>
                             </div>
-
-
-
-                        <div class="border-top">
-                            <div class="d-flex justify-content-between">
-                        
-                                
-                                 <button class="btn btn-primary btn-icon-text" style="margin:auto;">
-                                   + <i class="fa fa-window-maximize"></i>
-                                    {{ $towd->moneya + $towd->moneyb + $towd->moneyc + $towd->moneyd + $towd->moneye}}/ကျပ်</button>
-                                </button>
-                            </div>
-                        </div>
-                          
-
                     </div>
                   </div>
                 </div>
