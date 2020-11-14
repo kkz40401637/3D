@@ -52,14 +52,14 @@
         </div>
       </div>
     </li>
-@role('superadmin|admin')
+
 <li class="nav-item">
-  <a class="nav-link" href="{{url('adminlogin')}}">
+  <a class="nav-link" href="{{url('dashboard')}}">
     <i class="fa fa-home menu-icon"></i>
     <span class="menu-title">Dashboard</span>
   </a>
 </li>
-@endrole
+
 
 
 @role('superadmin')
@@ -163,13 +163,6 @@
 @role('user')
 
     <li class="nav-item">
-      <a class="nav-link" href="">
-        <i class="fas fa-usd-square menu-icon"></i>
-        <span class="menu-title">ငွေးသွင်း/ငွေထုတ်</span>
-      </a>
-    </li>
-
-    <li class="nav-item">
       <a class="nav-link" href="{{url('reports')}}">
         <i class="fab fa-css3-alt menu-icon"></i>
         <span class="menu-title">ချဲထိုးမယ်</span>
@@ -218,6 +211,7 @@
     <span class="menu-title">နှစ်လုံးထိုးထားသည့်ဂဏန်းများ</span>
   </a>
 </li>
+
 @endrole
   
   </ul>

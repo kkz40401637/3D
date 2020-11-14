@@ -9,6 +9,7 @@
         Dashboard
       </h3>
     </div> --}}
+    @role('admin')
     <div class="row grid-margin">
       <div class="col-12">
         <div class="card card-statistics">
@@ -17,10 +18,10 @@
                 <div class="statistics-item">
                   <p>
                     <i class="icon-sm fa fa-user mr-2"></i>
-                    New users
+                    ထိုးသား
                   </p>
-                  <h2></h2>
-                  <label class="badge badge-outline-success badge-pill">2.7% increase</label>
+                  <h3><i class="far fa-check-circle"></i>&nbsp;&nbsp;{{ $users }}</h3>
+                 
                 </div>
                 <div class="statistics-item">
                   <p>
@@ -67,33 +68,9 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-6 grid-margin stretch-card">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">
-              <i class="fas fa-gift"></i>
-              Orders
-            </h4>
-            <canvas id="orders-chart"></canvas>
-            <div id="orders-chart-legend" class="orders-chart-legend"></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 grid-margin stretch-card">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">
-              <i class="fas fa-chart-line"></i>
-              Sales
-            </h4>
-            <h2 class="mb-5">56000 <span class="text-muted h4 font-weight-normal">Sales</span></h2>
-            <canvas id="sales-chart"></canvas>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
+    @endrole
+  
+    {{-- <div class="row">
       <div class="col-md-4 grid-margin stretch-card">
         <div class="card">
           <div class="card-body d-flex flex-column">
@@ -170,7 +147,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> --}}
     <!-- <div class="row">
       <div class="col-12 grid-margin">
         <div class="card">
@@ -315,87 +292,103 @@
           <div class="card-body">
             <h4 class="card-title">
               <i class="fas fa-table"></i>
-              Sales Data
+              တစ်ပါတ်စာထွက်ဂဏန်းများ
             </h4>
             <div class="table-responsive">
               <table class="table">
                 <thead>
                   <tr>
-                    <th>Customer</th>
-                    <th>Item code</th>
-                    <th>Orders</th>
-                    <th>Status</th>
+                    <th>နေ့</th>
+                    <th>9:30AM</th>
+                    <th>2:00PM</th>
+                    <th>12:00PM</th>
+                    <th>4:00PM</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td class="font-weight-bold">
-                      Clifford Wilson
+                     တနင်္ဂလာ
                     </td>
                     <td class="text-muted">
-                      PT613
+                      <h4>90</h4>
                     </td>
                     <td>
-                      350
+                     <h4>90</h4>
                     </td>
                     <td>
-                      <label class="badge badge-success badge-pill">Dispatched</label>
+                      <h4>00</h4>
+                    </td>
+                    <td>
+                      <h4>00</h4>
                     </td>
                   </tr>
                   <tr>
                     <td class="font-weight-bold">
-                      Mary Payne
+                      အင်္ဂါ
                     </td>
                     <td class="text-muted">
-                      ST456
+                      <h4>90</h4>
                     </td>
                     <td>
-                      520
+                     <h4>90</h4>
                     </td>
                     <td>
-                      <label class="badge badge-warning badge-pill">Processing</label>
+                      <h4>00</h4>
+                    </td>
+                    <td>
+                      <h4>00</h4>
                     </td>
                   </tr>
                   <tr>
                     <td class="font-weight-bold">
-                      Adelaide Blake
+                      ဗုဒ္ဓဟူး
                     </td>
                     <td class="text-muted">
-                      CS789
+                      <h4>90</h4>
                     </td>
                     <td>
-                      830
+                     <h4>90</h4>
                     </td>
                     <td>
-                      <label class="badge badge-danger badge-pill">Failed</label>
+                      <h4>00</h4>
+                    </td>
+                    <td>
+                      <h4>00</h4>
                     </td>
                   </tr>
                   <tr>
                     <td class="font-weight-bold">
-                      Adeline King
+                      ကြာသပတေး
                     </td>
                     <td class="text-muted">
-                      LP908
+                      <h4>90</h4>
                     </td>
                     <td>
-                      579
+                     <h4>90</h4>
                     </td>
                     <td>
-                      <label class="badge badge-primary badge-pill">Delivered</label>
+                      <h4>00</h4>
+                    </td>
+                    <td>
+                      <h4>00</h4>
                     </td>
                   </tr>
                   <tr>
                     <td class="font-weight-bold">
-                      Bertie Robbins
+                      သောကြာ
                     </td>
                     <td class="text-muted">
-                      HF675
+                      <h4>90</h4>
                     </td>
                     <td>
-                      790
+                     <h4>90</h4>
                     </td>
                     <td>
-                      <label class="badge badge-info badge-pill">On Hold</label>
+                      <h4>00</h4>
+                    </td>
+                    <td>
+                      <h4>00</h4>
                     </td>
                   </tr>
                 </tbody>
@@ -609,6 +602,79 @@
         </div>
       </div>
     </div> -->
+    {{-- <div class="row">
+      <div class="col-md-4 grid-margin stretch-card">
+        <iframe src="https://www.fctables.com/italy/serie-a/iframe/?type=league-scores&lang_id=2&country=67&template=17&team=&timezone=Indian/Cocos&time=12&width=100%25&height=100%25&font=Times+new+roman&fs=12&lh=28&bg=FFFFFF&fc=000000&logo=1&tlink=1&scoreb=ff0000&scorefc=FFFFFF&sgdcoreb=388E3C&sgdcorefc=FFFFFF&sh=0&hfb=1&hbc=0000000&hfc=FFFFFF" height="380" title="Iframe Example"></iframe>
+      </div>
+    </div> --}}
+    <div class="col-md-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">ဘောလုံးပွဲများဇယား</h4>
+          <ul class="nav nav-pills nav-pills-success" id="pills-tab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active show" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">ပရီမီယာလိဒ်</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">လာလီဂါ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">မှတ်ချက်</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade active show" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+              <div class="media">
+                <iframe src="https://www.fctables.com/england/premier-league/iframe/?type=table&lang_id=2&country=67&template=10&team=&timezone=Pacific/Midway&time=24&po=1&ma=1&wi=1&dr=1&los=1&gf=1&ga=1&gd=1&pts=1&ng=0&form=0&width=100%25&height=100%25&font=Verdana&fs=12&lh=22&bg=FFFFFF&fc=333333&logo=1&tlink=1&scfs=22&scfc=333333&scb=1&sclg=1&teamls=80&ths=1&thb=1&thba=FFFFFF&thc=000000&bc=dddddd&hob=f5f5f5&hobc=ebe7e7&lc=333333&sh=0&hfb=0&hbc=388E3C&hfc=FFFFFF" height="500" width="600" title="Iframe Example"></iframe>
+                <iframe src="https://www.fctables.com/england/premier-league/iframe/?type=league-scores&lang_id=2&country=67&template=10&team=189577&timezone=Indian/Cocos&time=12&width=100%25&height=100%25&font=Times+new+roman&fs=12&lh=28&bg=FFFFFF&fc=000000&logo=1&tlink=1&scoreb=ff0000&scorefc=FFFFFF&sgdcoreb=388E3C&sgdcorefc=FFFFFF&sh=0&hfb=1&hbc=0000000&hfc=FFFFFF" height="500" width="600" title="Iframe Example"></iframe>
+                
+              </div>
+            </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+              <div class="media">
+                <iframe src="https://www.fctables.com/spain/liga-bbva/iframe/?type=table&lang_id=2&country=67&template=43&team=&timezone=Pacific/Midway&time=24&po=1&ma=1&wi=1&dr=1&los=1&gf=1&ga=1&gd=1&pts=1&ng=0&form=0&width=100%25&height=100%25&font=Verdana&fs=12&lh=22&bg=FFFFFF&fc=333333&logo=1&tlink=1&scfs=22&scfc=333333&scb=1&sclg=1&teamls=80&ths=1&thb=1&thba=FFFFFF&thc=000000&bc=dddddd&hob=f5f5f5&hobc=ebe7e7&lc=333333&sh=0&hfb=0&hbc=388E3C&hfc=FFFFFF" height="500" width="600" title="Iframe Example"></iframe>
+                <iframe src="https://www.fctables.com/england/premier-league/iframe/?type=league-scores&lang_id=2&country=67&template=10&team=189577&timezone=Indian/Cocos&time=12&width=100%25&height=100%25&font=Times+new+roman&fs=12&lh=28&bg=FFFFFF&fc=000000&logo=1&tlink=1&scoreb=ff0000&scorefc=FFFFFF&sgdcoreb=388E3C&sgdcorefc=FFFFFF&sh=0&hfb=1&hbc=0000000&hfc=FFFFFF" height="500" width="600" title="Iframe Example"></iframe>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+              <div class="media">
+                
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      kkkkkk
+                    </h4>
+                    {{-- <p class="card-description">
+                      A simple suggestion engine
+                    </p> --}}
+                    <div class="form-group row">
+                      <div class="col">
+                        <label>n</label>
+                        <div id="the-basics">
+                          <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input class="typeahead tt-hint" type="text" readonly="" autocomplete="off" spellcheck="false" tabindex="-1" dir="ltr" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box padding-box rgb(255, 255, 255);"><input class="typeahead tt-input" type="text" placeholder="States of USA" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: PTSans, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"><div class="tt-dataset tt-dataset-states"></div></div></span>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <label>k</label>
+                        <div id="bloodhound">
+                          <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input class="typeahead tt-hint" type="text" readonly="" autocomplete="off" spellcheck="false" tabindex="-1" dir="ltr" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box padding-box rgb(255, 255, 255);"><input class="typeahead tt-input" type="text" placeholder="States of USA" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: PTSans, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"><div class="tt-dataset tt-dataset-states"></div></div></span>
+                        </div>
+                      </div>
+
+                      <div class="col">
+                        
+                        <div id="bloodhound">
+                          <button type="button">submit</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- content-wrapper ends -->
 

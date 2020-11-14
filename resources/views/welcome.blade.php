@@ -47,8 +47,8 @@
         <div class="video-overlay"></div>
         <div class="video-content">
             <div class="inner">
-              <h1>အပျော်တမ်းဘောလုံးကစားမယ်</h1>
-            
+              <h1>အပျော်တမ်းကစားမယ်</h1><hr>
+              <p style="background: #000000 ">မိမိစိတ်ကြိုက်အချိန်မရွေးငွေသွင်းငွေထုတ်လုပ်နိုင်ခြင်း</p>
             </div>
         </div>
         <video autoplay loop muted>

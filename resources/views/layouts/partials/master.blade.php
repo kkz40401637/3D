@@ -31,7 +31,8 @@
     
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/print.css') }}" type="text/css" media="print">
-
+ 
+    
 
 
 </head>

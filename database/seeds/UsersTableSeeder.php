@@ -26,7 +26,7 @@ class UsersTableSeeder extends Seeder
 
         $user = new User();
         $user->name='kozayar';
-        $user->email='kozayar@gmail.com ';
+        $user->email='kozayar@gmail.com';
         $user->password=Hash::make ('password@kozayar');
         $user->remember_token=Str::random(6);
 

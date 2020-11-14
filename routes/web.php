@@ -28,7 +28,7 @@ Route::resource('/offnumber','OffnumberController')->middleware('auth');
 Route::resource('/allnumber','AllnumberController')->middleware('auth');
 
 Route::get('adminlogin/', 'AdminLoginController@index');
-
+Route::get('dashboard/', 'AdminLoginController@index1');
 
 Route::post('adminlogin/', 'AdminLoginController@checklogin');
 Route::post('adminlogin/logout', 'AdminLoginController@logout');

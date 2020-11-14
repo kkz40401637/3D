@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use Illuminate\Http\Request;
 use Validator;
 use Auth;
@@ -11,6 +11,13 @@ class AdminLoginController extends Controller
     public function index()
     {
      return view('auth.login');
+    }
+    public function index1()
+    {
+        // $users = User::count();
+        // $users=auth()->user()->users;
+        $users=auth()->user()->users->count();
+        return view('dashboard',compact('users'));
     }
 
     function checklogin(Request $request)
@@ -27,7 +34,8 @@ class AdminLoginController extends Controller
 
      if(Auth::attempt($user_data))
      {
-        return view('dashboard');
+        $users=auth()->user()->users->count();
+        return view('dashboard',compact('users'));
      }
      else
      {
