@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\User;
+use App\Offnumber;
+use App\Money;
 use Illuminate\Support\Facades\Hash;
 use DB;
 
@@ -15,11 +16,12 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+   
     public function index()
     {
         $users=User::role('admin')->get();
-
-        return view('backend.admins.index',compact('users'));
+        $moneys= auth()->user()->moneys;
+        return view('backend.admins.index',compact('users','moneys'));
     }
 
     /**
@@ -45,17 +47,17 @@ class AdminController extends Controller
 
             'name' => 'required',
             'email'=> 'required|email',
-
             'password' => 'required|same:confirm-password',
         ]);
 
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
-
+        $input['user_id'] = auth()->user()->id;
         $user = User::create($input);
         $user->assignRole('admin');
-        return redirect()->route('admins.index')->with('success','Admin created successfully');
+        return redirect()->route('admins.index',compact('offnumbers'))->with('success','Admin created successfully');
     }
+
 
     /**
      * Display the specified resource.
@@ -101,6 +103,8 @@ class AdminController extends Controller
 
         $user = User::find($id);
         $user->update($input);
+        $input['password'] = Hash::make($input['password']);
+        $input['user_id'] = auth()->user()->id;
         $user->assignRole('admin');
         return redirect()->route('admins.index')->with('success','Admin updated successfully');
     }

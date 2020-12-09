@@ -26,7 +26,7 @@ class User extends Authenticatable implements JWTSubject
      */
 
     protected $fillable = [
-        'name', 'email','money', 'password','user_id',
+        'name', 'email','money','phno', 'password','user_id',
     ];
 
     /**
@@ -59,20 +59,44 @@ class User extends Authenticatable implements JWTSubject
 
        return $this->hasMany('App\Report');
     }
+   
     public function users(){
 
         return $this->hasMany('App\User');
+     }
+     public function footballs(){
+         
+        return $this->hasMany('App\Football');
      }
     public function drives(){
 
         return $this->hasMany('App\Drive');
      }
+    public function bodys(){
+         
+        return $this->hasMany('App\Body');
+     }
     public function bodyls(){
 
         return $this->hasMany('App\Bodyl');
      }
+
      public function towds(){
          
         return $this->hasMany('App\Towd');
+     }
+    public function wdraws(){
+         
+        return $this->hasMany('App\Withdraw');
+     }
+
+     public function moneys(){
+         return $this->hasMany('App\Money');
+     }
+     public function offnumbers(){
+         return $this->hasMany('App\Offnumber');
+     }
+     public function inmoneys(){
+         return $this->hasMany('App\Inmoney');
      }
 }

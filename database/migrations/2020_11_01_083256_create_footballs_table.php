@@ -15,6 +15,7 @@ class CreateFootballsTable extends Migration
     {
         Schema::create('footballs', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
             $table->string('home');
             $table->string('away');
             $table->string('plus')->nullable();

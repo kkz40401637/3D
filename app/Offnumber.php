@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Offnumber extends Model
 {
     protected $fillable = [
-    	'offnumber'
+    	'user_id','offnumber',
     ];
+     public function user(){
+
+        return $this->belongsTo('App\User');
+     }
 }

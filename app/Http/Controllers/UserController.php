@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Report;
+use App\Withdraw;
+use App\Money;
 use Illuminate\Support\Facades\Hash;
+
 use DB;
 
 class UserController extends Controller
@@ -15,11 +18,17 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
     
         $users=auth()->user()->users;
-        return view('backend.users.index',compact('users'));
+        $moneys= auth()->user()->moneys;
+        return view('backend.users.index',compact('users','moneys'));
     }
 
     /**
@@ -103,7 +112,8 @@ class UserController extends Controller
 
         $user->update($input);
         $user->assignRole('user');
-        return redirect()->route('users.index')->with('success','User updated successfully');
+        // return redirect()->route('moneys.index')->with('success','User updated successfully');
+        return redirect()->back()->with('success',' အောင်မြင်ပါသည်');
     }
 
     /**

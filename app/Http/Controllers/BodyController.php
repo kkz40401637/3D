@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Body;
+use App\Bodyl;
+use App\User;
 use Illuminate\Http\Request;
 
 class BodyController extends Controller
@@ -13,7 +15,7 @@ class BodyController extends Controller
      */
     public function index()
     {
-        $bodys = Body::all();
+        $bodys = Body::where('user_id',auth()->user()->user_id)->get();
         return view('backend.body.index',compact('bodys'));
     }
 
@@ -24,7 +26,9 @@ class BodyController extends Controller
      */
     public function create()
     {
-        return view('backend.body.create');
+        $users = User::all();
+        $bodys= auth()->user()->bodys;
+        return view('backend.body.create',compact('bodys'));
     }
 
     /**
@@ -40,15 +44,17 @@ class BodyController extends Controller
              'away' => 'required',
         ]);
        
-        $body = new Body();
-        $body->home = $request->home;
-        $body->away = $request->away;
-        $body->plus = $request->plus;
-        $body->minus = $request->minus;
-        $body->gold = $request->gold;
+        $bodys = new Body();
+        $bodys->user_id= auth()->user()->id;
+        $bodys->home = $request->home;
+        $bodys->away = $request->away;
+        $bodys->plus = $request->plus;
+        $bodys->minus = $request->minus;
+        $bodys->gold = $request->gold;
 
-        if($body->save());
-
+        if($bodys->save());
+        $user = User::find(auth()->user()->id);
+        $user->save();
         return redirect()->back()->with('success', 'information inserted successfully!');
     }
 
@@ -94,6 +100,7 @@ class BodyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Body::find($id)->delete();
+        return redirect()->back()->with('success',' အောင်မြင်ပါသည်');
     }
 }

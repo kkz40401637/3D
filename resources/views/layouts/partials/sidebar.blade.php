@@ -45,9 +45,10 @@
           </p>
           @endrole
           @role('user')
-          <p class="designation">
-             User
-          </p>
+          <h1 class="designation" >
+             လက်ကျန်ငွေ ( {{  Auth()->user()->money  }} )ကျပ်
+            
+          </h1>
           @endrole
         </div>
       </div>
@@ -60,55 +61,42 @@
   </a>
 </li>
 
+@role('user')
+ <li class="nav-item">
+  <a class="nav-link" href="{{ url('wdraws') }}">
+    <i class="fas fa-file-invoice-dollar menu-icon" style="background: rgb(250, 3, 45)"></i>
+    <span class="menu-title">ငွေးသွင်း/ငွေထုတ်</span>
+  </a>
+</li>
+@endrole
 
 
 @role('superadmin')
-    <li class="nav-item">
-        <a class="nav-link" data-toggle="collapse" href="#admins" aria-expanded="false" aria-controls="admins">
-            <i class="fas fa-user-shield menu-icon"></i>
-          <span class="menu-title">လက်ခွဲဒိုင်များ</span>
-          <i class="menu-arrow"></i>
-        </a>
-        <div class="collapse" id="admins">
-          <ul class="nav flex-column sub-menu">
-            
-            <li class="nav-item"> <a class="nav-link" href="{{ route('admins.create') }}">ဒိုင်းများထည့်မယ်</a></li>
-            <li class="nav-item"> <a class="nav-link" href="{{ route('admins.store') }}"> လက်ခွဲဒိုင်များစာရင်း </a></li>
-
-          </ul>
-        </div>
-      </li>
+   
+<li class="nav-item">
+  <a class="nav-link" href="{{ route('admins.create') }}">
+    <i class="fas fa-window-restore menu-icon"></i>
+    <span class="menu-title">ဒိုင်းအသစ်းထည့်မယ်</span>
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="{{ route('admins.store') }}">
+    <i class="fas fa-table menu-icon"></i>
+    <span class="menu-title">လက်ခွဲဒိုင်များစာရင်း</span>
+  </a>
+</li>
 @endrole
 
 @role('admin')
-{{-- <li class="nav-item">
-    <a class="nav-link" data-toggle="collapse" href="#users" aria-expanded="false" aria-controls="users">
-        <i class="fas fa-user-shield menu-icon"></i>
-      <span class="menu-title">ထိုးသားများ</span>
-      <i class="menu-arrow"></i>
-    </a>
-    <div class="collapse" id="users">
-      <ul class="nav flex-column sub-menu">
-        <li class="nav-item"> <a class="nav-link" href="{{ route('users.create') }}">ထိုးသားများထည့်မယ်</a></li>
-        <li class="nav-item"> <a class="nav-link" href="{{ route('users.store') }}">ထိုးသားများကြည့်မယ်</a></li>
-      </ul>
-    </div>
-  </li>
 
-  <li class="nav-item">
-    <a class="nav-link" data-toggle="collapse" href="#football" aria-expanded="false" aria-controls="football">
-        <i class="fas fa-user-shield menu-icon"></i>
-      <span class="menu-title">ဘောလုံး</span>
-      <i class="menu-arrow"></i>
-    </a>
-    <div class="collapse" id="football">
-      <ul class="nav flex-column sub-menu">
-        <li class="nav-item"> <a class="nav-link" href="{{ route('footballs.create') }}">မောင်းကြေးဖွင့်မယ်</a></li>
-        <li class="nav-item"> <a class="nav-link" href="{{ route('bodys.create') }}">ဘောဒီကြေးဖွင့်မယ်</a></li>
-        <li class="nav-item"> <a class="nav-link" href="#">လောင်းထားသည့်မောင်းများ</a></li>
-      </ul>
-    </div>
-  </li> --}}
+<li class="nav-item">
+  <a class="nav-link" href="{{ route('moneys.index') }}">
+    <i class="fas fa-futbol menu-icon"></i>
+    <span class="menu-title">ငွေလက်ခံနှင်ငွေထုတ်နေရာ</span>
+  </a>
+</li>
+
+
 <li class="nav-item">
   <a class="nav-link" href="{{ route('users.create') }}">
     <i class="fas fa-user-shield menu-icon"></i>
@@ -137,29 +125,16 @@
 @endrole
 
 @role('admin')
-    {{-- <li class="nav-item d-none d-lg-block">
-      <a class="nav-link" data-toggle="collapse" href="#sidebar-layouts" aria-expanded="false" aria-controls="sidebar-layouts">
-        <i class="fas fa-users menu-icon"></i>
-
-        <span class="menu-title">သုံးလုံးပိတ်ဂဏန်းများ</span>
-        <i class="menu-arrow"></i>
-      </a>
-      <div class="collapse" id="sidebar-layouts">
-        <ul class="nav flex-column sub-menu">
-
-            <li class="nav-item"> <a class="nav-link" href="{{url('offnumber')}}">ပိတ်ဂဏန်းများ</a></li>
-            
-        </ul>
-      </div>
-    </li> --}}
+   
  <li class="nav-item">
   <a class="nav-link" href="{{url('offnumber')}}">
     <i class="fab fa-css3-alt menu-icon"></i>
     <span class="menu-title">သုံးလုံးပိတ်ဂဏန်းများ</span>
   </a>
 </li>
+
 @endrole
-   
+
 @role('user')
 
     <li class="nav-item">
@@ -213,7 +188,5 @@
 </li>
 
 @endrole
-  
   </ul>
 </nav>
-<!-- partial -->

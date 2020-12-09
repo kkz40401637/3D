@@ -15,6 +15,7 @@ class CreateBodiesTable extends Migration
     {
         Schema::create('bodies', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
             $table->string('home');
             $table->string('away');
             $table->string('plus')->nullable();

@@ -11,7 +11,7 @@
                 <form class="form-sample" method="POST" action="{{ route('footballs.store') }}">
                 @csrf
                 <p class="card-description">
-                  <button type="button" class="btn btn-dark btn-lg btn-block">ပေါက်ကြေးများကိုသေချာစွာဂရုစိုက်၍ထည့်ပါ</button>
+                  <button type="button" class="btn btn-dark btn-lg btn-block" disabled>မောင်းပေါက်ကြေးများကိုသေချာစွာဂရုစိုက်၍ထည့်ပါ</button>
                 </p>
                 <div class="row">
                   <div class="col-md-6">
@@ -64,14 +64,14 @@
         <div class="col-lg-12 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
-              <p class="card-description">
+              {{-- <p class="card-description">
                 <button style="margin-bottom: 10px" class="btn btn-primary delete_all" data-url="{{ url('footbal.multiple-delete') }}">Delete All Selected</button>
-              </p>
+              </p> --}}
               <div class="table-responsive">
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th width="50px"><input type="checkbox" id="master"></th>
+                      <th class="font-weight-bold">နံပါတ်</th>
                       <th class="font-weight-bold">ကြေး</th>
                       <th class="font-weight-bold">အိမ်ကွင်း</th>
                       <th class="font-weight-bold">ဂိုးပေါင်း</th>
@@ -81,10 +81,10 @@
                     </tr>
                   </thead>
                   <tbody>
-                      @if($footballs->count())
-                        @foreach($footballs as $football)
+                      {{-- @if($footballs->count()) --}}
+                        @foreach($footballs as $key => $football)
                         <tr>
-                            <td><input type="checkbox" class="sub_chk" data-id="{{ $football->id }}"></td>
+                            <td><span class="badge badge-dark">{{ ++$key }}</span></td>
                           
                             <td>
                             <h4><span class="badge badge-danger">{{ $football->plus }}</span></h4>
@@ -112,7 +112,7 @@
                 
                         </tr>
                         @endforeach
-                      @endif
+                      {{-- @endif --}}
                   </tbody>
                   
 

@@ -11,8 +11,7 @@ class UsersTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    {
+    public function run(){
         $user = new User();
         $user->name='kokaung';
         $user->email='kokaung@gmail.com';
@@ -38,11 +37,163 @@ class UsersTableSeeder extends Seeder
        $user = new User();
        $user->name='kosan';
        $user->email='kosan@gmail.com ';
+       $user->user_id='2';
        $user->password=Hash::make ('password@kosan');
        $user->remember_token=Str::random(6);
 
        $user->save();
        $user->assignRole('user');
 
+
+        $user = new User();
+           $user->name='kosan';
+           $user->email='kosan1@gmail.com ';
+           $user->user_id='2';
+           $user->password=Hash::make ('password@kosan');
+           $user->remember_token=Str::random(6);
+
+           $user->save();
+           $user->assignRole('user'); 
+
+        $user = new User();
+           $user->name='kosan';
+           $user->email='kosan3@gmail.com ';
+           $user->user_id='2';
+           $user->password=Hash::make ('password@kosan');
+           $user->remember_token=Str::random(6);
+
+           $user->save();
+           $user->assignRole('user'); 
+
+        $user = new User();
+           $user->name='kosan';
+           $user->email='kosan4@gmail.com ';
+           $user->user_id='2';
+           $user->password=Hash::make ('password@kosan');
+           $user->remember_token=Str::random(6);
+
+           $user->save();
+           $user->assignRole('user'); 
+
+
+        $user = new User();
+           $user->name='kosan';
+           $user->email='kosan5@gmail.com ';
+           $user->user_id='2';
+           $user->password=Hash::make ('password@kosan');
+           $user->remember_token=Str::random(6);
+
+           $user->save();
+           $user->assignRole('user'); 
+
+        $user = new User();
+           $user->name='kosan';
+           $user->email='kosan6@gmail.com ';
+           $user->user_id='2';
+           $user->password=Hash::make ('password@kosan');
+           $user->remember_token=Str::random(6);
+
+           $user->save();
+           $user->assignRole('user'); 
+
+        $user = new User();
+           $user->name='kosan';
+           $user->email='kosan7@gmail.com ';
+           $user->user_id='2';
+           $user->password=Hash::make ('password@kosan');
+           $user->remember_token=Str::random(6);
+
+           $user->save();
+           $user->assignRole('user'); 
+
+        $user = new User();
+           $user->name='kosan';
+           $user->email='kosan8@gmail.com ';
+           $user->user_id='2';
+           $user->password=Hash::make ('password@kosan');
+           $user->remember_token=Str::random(6);
+
+           $user->save();
+           $user->assignRole('user');
+           
+        $user = new User();
+           $user->name='kosan';
+           $user->email='kosan9@gmail.com ';
+           $user->user_id='2';
+           $user->password=Hash::make ('password@kosan');
+           $user->remember_token=Str::random(6);
+
+           $user->save();
+           $user->assignRole('user'); 
+
+        $user = new User();
+           $user->name='kosan';
+           $user->email='kosan10@gmail.com ';
+           $user->user_id='2';
+           $user->password=Hash::make ('password@kosan');
+           $user->remember_token=Str::random(6);
+
+           $user->save();
+           $user->assignRole('user'); 
+
+        $user = new User();
+           $user->name='kosan';
+           $user->email='kosan11@gmail.com ';
+           $user->user_id='2';
+           $user->password=Hash::make ('password@kosan');
+           $user->remember_token=Str::random(6);
+
+           $user->save();
+           $user->assignRole('user'); 
+
+        $user = new User();
+           $user->name='kosan';
+           $user->email='kosan12@gmail.com ';
+           $user->user_id='2';
+           $user->password=Hash::make ('password@kosan');
+           $user->remember_token=Str::random(6);
+
+           $user->save();
+           $user->assignRole('user'); 
+
+        $user = new User();
+           $user->name='kosan';
+           $user->email='kosan13@gmail.com ';
+           $user->user_id='2';
+           $user->password=Hash::make ('password@kosan');
+           $user->remember_token=Str::random(6);
+
+           $user->save();
+           $user->assignRole('user'); 
+
+        $user = new User();
+           $user->name='kosan';
+           $user->email='kosan14@gmail.com ';
+           $user->user_id='2';
+           $user->password=Hash::make ('password@kosan');
+           $user->remember_token=Str::random(6);
+
+           $user->save();
+           $user->assignRole('user'); 
+
+        $user = new User();
+           $user->name='kosan';
+           $user->email='kosan15@gmail.com ';
+           $user->user_id='2';
+           $user->password=Hash::make ('password@kosan');
+           $user->remember_token=Str::random(6);
+
+           $user->save();
+           $user->assignRole('user'); 
+
+        $user = new User();
+           $user->name='kosan';
+           $user->email='kosan16@gmail.com ';
+           $user->user_id='2';
+           $user->password=Hash::make ('password@kosan');
+           $user->remember_token=Str::random(6);
+
+           $user->save();
+           $user->assignRole('user'); 
     }
 }

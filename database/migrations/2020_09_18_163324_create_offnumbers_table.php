@@ -15,6 +15,7 @@ class CreateOffnumbersTable extends Migration
     {
         Schema::create('offnumbers', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
             $table->char('offnumber');
             $table->timestamps();
         });

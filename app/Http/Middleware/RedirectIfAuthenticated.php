@@ -19,10 +19,10 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            if(Auth()->user()->hasRole('superadmin')||Auth()->user()->hasRole('admin')||Auth()->user()->hasRole('user')){
-                return redirect('adminlogin');
-            }else{
-                return redirect('/');
+            if(Auth()->user()->hasRole($role)){
+                return redirect('admins');
+            } if(Auth()->user()->hasRole($role)){
+                return redirect('users');
         }
     }
 

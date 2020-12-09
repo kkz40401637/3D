@@ -15,6 +15,7 @@ class CreateAllnumbersTable extends Migration
     {
         Schema::create('allnumbers', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
             $table->char('allnumber');
             $table->timestamps();
         });

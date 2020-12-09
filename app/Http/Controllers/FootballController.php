@@ -13,7 +13,7 @@ class FootballController extends Controller
      */
     public function index()
     {
-        $footballs = Football::all();
+        $footballs = Football::where('user_id',auth()->user()->user_id)->get();
         $users = User::all();
         return view('backend.football.index',compact('footballs','users'));
     }
@@ -26,7 +26,8 @@ class FootballController extends Controller
     public function create()
     {
         
-        $footballs = Football::all();
+        $users = User::all();
+        $footballs= auth()->user()->footballs;
         return view('backend.football.create',compact('footballs'));
     }
 
@@ -42,15 +43,16 @@ class FootballController extends Controller
              'home' => 'required',
              'away' => 'required',
         ]);
-        $football = new Football();
-        $football->home = $request->home;
-        $football->away = $request->away;
-        $football->plus = $request->plus;
-        $football->minus = $request->minus;
-        $football->gold = $request->gold;
+        $footballs = new Football();
+        $footballs->user_id= auth()->user()->id;
+        $footballs->home = $request->home;
+        $footballs->away = $request->away;
+        $footballs->plus = $request->plus;
+        $footballs->minus = $request->minus;
+        $footballs->gold = $request->gold;
 
         
-         if($football->save());
+         if($footballs->save());
 
             return redirect()->back()->with('success', 'information inserted successfully!');
     }

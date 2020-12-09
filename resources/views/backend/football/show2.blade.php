@@ -1,99 +1,92 @@
 @extends('layouts.partials.master')
-@section('title', 'Dashboard')
+@section('title', 'Admin')
 @section('content')
-
+@include('function.function')
 <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="page-header">
-        
-            <h4 class="card-title">
-            {{ $user->name }}၏မောင်းစာရင်းများ</h4>
-          </div>
-  
-            <div class="row">
-                @foreach ($drives as $drive)
-                <div class="col-md-3 grid-margin stretch-card">
-                  <div class="card">
-                    <div class="card-body">
-                        <div class="border">
-                            <div class="d-flex justify-content-belotween">
+  <div class="content-wrapper">
+    <div class="card">
+      <h4 class="card-title">
+      {{-- {{ $user->name }} --}}
+      <div class="card-body">
+        <div class="row">
+         
+          <div class="col-12">
+            <div class="table-responsive">
+              <table id="order-listing" class="table table-bordered table-hover nowrap">
+                <thead>
+                  <tr>
+                    <th>အမည်</th>
+                    <th>အသင်း</th>
+                    <th>ငွေ</th>
+                    <th>အချိန်</th>
+                    <th>ဖျက်မယ်</th>
+                  </tr> 
+                </thead>
+                <tbody>
+                     @foreach ($users as $user)
+                     @foreach ($user->drives as $drive)        
+                    <tr>
+                          <td>{{ $user->name}}</td>
+                          <td><div class="d-flex content-between">
+                               <button class="btn btn-primary btn-icon-text" disabled>
+                                1&nbsp;<i class="far fa-futbol"></i>&nbsp;{{ $drive->foot }}</button>&nbsp;
+                                <button class="btn btn-primary btn-icon-text" disabled>
+                                2&nbsp;<i class="far fa-futbol"></i>&nbsp;{{ $drive->foota }}</button>
+                              </div><br>
                             
-                            <button class="btn btn-primary btn-icon-text">
+                              <div class="d-flex content-between">
+                                <button class="btn btn-primary btn-icon-text" disabled>
+                                3&nbsp;<i class="far fa-futbol"></i>&nbsp;{{ $drive->footb }}</button>&nbsp;
+                                <button class="btn btn-primary btn-icon-text" disabled>
+                                4&nbsp;<i class="far fa-futbol"></i>&nbsp;{{ $drive->footc }}</button>
+                              </div><br>
+                             
+                              <div class="d-flex content-between">
+                                <button class="btn btn-primary btn-icon-text" disabled>
+                                5&nbsp;<i class="far fa-futbol"></i>&nbsp;{{ $drive->footd }}</button>&nbsp;
+                                <button class="btn btn-primary btn-icon-text" disabled>
+                                6&nbsp;<i class="far fa-futbol"></i>&nbsp;{{ $drive->foote }}</button>
+                              </div><br>
+                          
+                              <div class="d-flex content-between">
+                                <button class="btn btn-primary btn-icon-text" disabled>
+                                7&nbsp;<i class="far fa-futbol"></i>&nbsp;{{ $drive->footf }}</button>&nbsp;
+                                <button class="btn btn-primary btn-icon-text" disabled>
+                                8&nbsp;<i class="far fa-futbol"></i>&nbsp;{{ $drive->footg }}</button>
+                                </div><br>
+                            
+                              <div class="d-flex content-between">
+                                 <button class="btn btn-primary btn-icon-text"  disabled>
+                                9&nbsp;<i class="far fa-futbol"></i>&nbsp;{{ $drive->footh }}</button>&nbsp;
+                                <button class="btn btn-primary btn-icon-text" disabled>
+                                10&nbsp;<i class="far fa-futbol"></i>&nbsp;{{ $drive->footi }}</button>
+                              </div><br>
+                              </td>
+                              <td> 
+                                <button class="btn btn-primary btn-icon-text" disabled>
                                 <i class="fa fa-window-maximize"></i>
                                 {{ $drive->money }}/ကျပ်မောင်း
-                            </button>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="border">
-                            <div class="d-flex justify-content-between">
-                              1
-                            <button class="btn btn-outline-success" disabled>{{ $drive->foot }}</button>
-                            </div>
-                        </div>
-                       <div class="border">
-                          <div class="d-flex justify-content-between">
-                            2
-                          <button class="btn btn-outline-success" disabled>{{ $drive->foota }}</button>
-                          </div>
-                      </div>
-                      <div class="border">
-                          <div class="d-flex justify-content-between">
-                            3
-                          <button class="btn btn-outline-success" disabled>{{ $drive->footb }}</button>
-                          </div>
-                      </div>
-                      <div class="border">
-                          <div class="d-flex justify-content-between">
-                            4
-                          <button class="btn btn-outline-success" disabled>{{ $drive->footc }}</button>
-                          </div>
-                      </div>
-                      <div class="border">
-                          <div class="d-flex justify-content-between">
-                            5
-                          <button class="btn btn-outline-success" disabled>{{ $drive->footd }}</button>
-                          </div>
-                      </div>
-                      <div class="border">
-                          <div class="d-flex justify-content-between">
-                            6
-                          <button class="btn btn-outline-success" disabled>{{ $drive->foote }}</button>
-                          </div>
-                      </div>
-                      <div class="border">
-                          <div class="d-flex justify-content-between">
-                            7
-                          <button class="btn btn-outline-success" disabled>{{ $drive->footf }}</button>
-                          </div>
-                      </div>
-                      <div class="border">
-                          <div class="d-flex justify-content-between">
-                            8
-                          <button class="btn btn-outline-success" disabled>{{ $drive->footg }}</button>
-                          </div>
-                      </div>
-                      <div class="border">
-                          <div class="d-flex justify-content-between">
-                            9
-                          <button class="btn btn-outline-success" disabled>{{ $drive->footh }}</button>
-                          </div>
-                      </div>
-                      <div class="border">
-                          <div class="d-flex justify-content-between">
-                            10
-                          <button class="btn btn-outline-success" disabled>{{ $drive->footi }}</button>
-                          </div>
-                      </div><br>
-                      
-                    </div>
-                  </div>
-                </div>
+                                </button>
+                              </td>          
+                          <td>
+                            <label class="badge badge-info">{{ ChangeUTCtoSMT($drive->created_at,'Asia/Yangon') }} </label>
+                          </td>
+                          <td>
+                            <button class="btn btn-outline-primary">View</button>
+                          </td>
+                      </tr>
+                    @endforeach
                 @endforeach
-              </div>
+                  </tbody>
+              </table>
+            </div>
+          </div>
+        
+         
         </div>
-  
-        <!-- partial -->
       </div>
-</div>
+    </div>
+  </div>
+  <!-- content-wrapper ends -->
+
 @endsection

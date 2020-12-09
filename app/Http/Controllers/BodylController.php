@@ -21,7 +21,7 @@ class BodylController extends Controller
     }
     public function index2(User $user)
     {
-        
+
         $users = User::all();
         $bodyls= $user->bodyls;
         return view('backend.body.show2',compact('users','bodyls','user'));
@@ -45,12 +45,12 @@ class BodylController extends Controller
     public function store(Request $request)
     {
         if(auth()->user()->money < $request->moneya){
-         
+
            return back()->with('error','လူကြီးမင်း၏လက်ကျန်ငွေမလုံလောက်ပါ၍ထပ်မံဖြည့်သွင့်ပါ');}
            else{
         $bodysl = new Bodyl();
         $bodysl->user_id= auth()->user()->id;
-        
+
         $bodysl->bodya = $request->bodya;
         $bodysl->moneya = $request->moneya;
 
@@ -65,14 +65,15 @@ class BodylController extends Controller
 
         $bodysl->bodye = $request->bodye;
         $bodysl->moneye = $request->moneye;
-       
+
         if($bodysl->save());
         $user = User::find(auth()->user()->id);
-        $user->money = auth()->user()->money-$bodysl->moneya;
+        $total=  $bodysl->moneya+ $bodysl->moneyb+ $bodysl->moneyc+$bodysl->moneyd+ $bodysl->moneye;
+        $user->money = auth()->user()->money-$total;
         $user->save();
 
         return redirect()->back()->with('success', 'လူးကြီးမင်း၏လုပ်ဆောင်မူ့အောင်မြင်ပါသည်');}
-           
+
     }
 
     /**
@@ -117,6 +118,7 @@ class BodylController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Bodyl::find($id)->delete();
+        return redirect()->back()->with('success',' အောင်မြင်ပါသည်');
     }
 }

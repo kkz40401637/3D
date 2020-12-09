@@ -6,5 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Body extends Model
 {
-    //
+    protected $fillable = [
+        'user_id','home','away','plus','minus','gold',
+    ];
+    
+    public function user(){
+
+        return $this->belongsTo('App\User');
+     }
 }

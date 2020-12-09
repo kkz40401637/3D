@@ -6,18 +6,19 @@
   <div class="content-wrapper">
     
     <div class="card">
-      <div class="card-body">
-        <button type="button" class="btn btn-dark btn-lg btn-block">အနည်းဆုံး(၅)သင်းမှစ၍မောင်းလောင်းနိုင်သည်/အသင်းထပ်အသင်းမှားဒိုင်စားမည်/ဘော်ဒီဂိုးပေါင်း ၂ သင်းထက်ပို၍မရပါ</button>
+      <div class="card-body"><!--အနည်းဆုံး(၄)သင်းမှစ၍မောင်းလောင်းနိုင်သည်/အသင်းထပ်အသင်းမှားဒိုင်စားမည်/ဘော်ဒီဂိုးပေါင်း ၂ သင်းထက်ပို၍မရပါ-->
+        <button type="button" class="btn btn-dark btn-lg btn-block" disabled>၄ပွဲနိုင်(၁၀)ဆ|၅ပွဲနိုင်(၂၀)ဆ|၆ပွဲနိုင်(၄၀)ဆ|အသင်းထပ်အသင်းမှားဒိုင်စားမည်</button>
         
         <div class="row">
             <div class="col-md-8 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  
+                
                   <div class="table-responsive">
                     <table class="table">
                       <thead>
                         <tr>
+                            <th class="font-weight-bold">နံပါတ်</th>
                             <th class="font-weight-bold">ကြေး</th>
                             <th class="font-weight-bold">အိမ်ကွင်း</th>
                             <th class="font-weight-bold">ဂိုးပေါင်း</th>
@@ -26,8 +27,9 @@
                         </tr>
                       </thead>
                       <tbody>
-                            @foreach ($footballs as $football)
+                            @foreach ($footballs as $key => $football)
                             <tr>
+                                <td><span class="badge badge-dark">{{ ++$key }}</span></td>
                                 <td>
                                 <h4><span class="badge badge-danger">{{ $football->plus }}</span></h4>
                                 <td>
@@ -66,16 +68,16 @@
                 <div class="card-body">
                     <form action="{{ route('drives.store') }}" method="post" enctype="multipart/form-data">
                       {{ csrf_field()}}
-                      <div class="form-group">
+                      {{-- <div class="form-group">
                              <label for="customer">@if(Auth()->user()->hasRole('user'))
                                လက်ကျန်ငွေ ( {{  Auth()->user()->money  }} )ကျပ်
                             @endif</label>
                             @if(Auth()->user()->hasRole('user'))
-                              <select class="form-control" name="user_id">
+                              <select class="form-control" name="user_id" disabled>
                                 <option>{{ Auth()->user()->name }}</option>
                               </select>
                             @endif
-                        </div>
+                        </div> --}}
                         
                         
                         <div class="form-group">

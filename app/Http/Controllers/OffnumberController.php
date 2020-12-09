@@ -14,9 +14,9 @@ class OffnumberController extends Controller
      */
     public function index()
     {
-        $offnumbers = Offnumber::all();
-        $threeds = Threed::all();
-        return view('number.offnumber',compact('offnumbers','threeds'));
+
+        $offnumbers= auth()->user()->offnumbers;
+        return view('number.offnumber',compact('offnumbers'));
     }
 
     /**
@@ -41,7 +41,9 @@ class OffnumberController extends Controller
              'offnumber' => 'required',
            
         ]);
+    
         $offnumbers = new Offnumber();
+        $offnumbers->user_id= auth()->user()->id;
         $offnumbers->offnumber = $request->input('offnumber');
        
         if($offnumbers->save());

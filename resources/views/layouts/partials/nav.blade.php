@@ -4,145 +4,31 @@
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row default-layout-navbar navbar-success">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
         <a class="navbar-brand brand-logo">
-          <img src="{{ asset('assets/backend/images/mini.png') }}" alt="logo"/></a>
+          <img src="{{ asset('assets/backend/images/mini1.png') }}" alt="logo"/></a>
           {{-- <h2><b>Welcome</b></h2> --}}
+            <br>
+        {{-- <a class="navbar-brand"  style="color: gold;">
+            <div class="h2 mt-0" data-now="" data-format="h:mm"></div>
+            <div class="text-muted text-sm" data-now="" data-format="a"></div>
+        </a> --}}
+
         <a class="navbar-brand brand-logo-mini" href="#!">
           <img src="{{ asset('assets/backend/images/logo-mini.png') }}" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-stretch">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-          <span class="fas fa-bars"></span>
+          <span class="fas fa-bars">&nbsp;
+
+          @role('user')
+            User</span>
+          @endrole
+          @role('admin')
+          Admin</span>
+          @endrole
         </button>
-        <ul class="navbar-nav">
-          <li class="nav-item nav-search d-none d-md-flex">
-            <div class="nav-link">
-              {{-- <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">
-                    <i class="fas fa-search"></i>
-                  </span>
-                </div>
-                <input type="text" class="form-control" placeholder="Search" aria-label="Search">
-              </div> --}}
-            </div>
-          </li>
-        </ul>
+
         <ul class="navbar-nav navbar-nav-right">
-          {{-- <li class="nav-item d-none d-lg-flex">
-            <a class="nav-link" href="">
-              <span class="btn btn-primar></span>
-            </a>
-          </li> --}}
-          {{-- <li class="nav-item dropdown">
-            <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-              <i class="fas fa-bell mx-0"></i>
-              <span class="count">16</span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-              <a class="dropdown-item">
-                <p class="mb-0 font-weight-normal float-left">You have 16 new notifications
-                </p>
-                <span class="badge badge-pill badge-warning float-right">View all</span>
-              </a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <div class="preview-icon bg-danger">
-                    <i class="fas fa-exclamation-circle mx-0"></i>
-                  </div>
-                </div>
-                <div class="preview-item-content">
-                  <h6 class="preview-subject font-weight-medium">Application Error</h6>
-                  <p class="font-weight-light small-text">
-                    Just now
-                  </p>
-                </div>
-              </a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <div class="preview-icon bg-warning">
-                    <i class="fas fa-wrench mx-0"></i>
-                  </div>
-                </div>
-                <div class="preview-item-content">
-                  <h6 class="preview-subject font-weight-medium">Settings</h6>
-                  <p class="font-weight-light small-text">
-                    Private message
-                  </p>
-                </div>
-              </a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <div class="preview-icon bg-info">
-                    <i class="far fa-envelope mx-0"></i>
-                  </div>
-                </div>
-                <div class="preview-item-content">
-                  <h6 class="preview-subject font-weight-medium">New user registration</h6>
-                  <p class="font-weight-light small-text">
-                    2 days ago
-                  </p>
-                </div>
-              </a>
-            </div>
-          </li> --}}
-          {{-- <li class="nav-item dropdown">
-            <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-              <i class="fas fa-envelope mx-0"></i>
-              <span class="count">25</span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-              <div class="dropdown-item">
-                <p class="mb-0 font-weight-normal float-left">You have 7 unread mails
-                </p>
-                <span class="badge badge-info badge-pill float-right">View all</span>
-              </div>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                    <img src="{{ asset('assets/backend/images/faces/face4.jpg') }}" alt="image" class="profile-pic">
-                </div>
-                <div class="preview-item-content flex-grow">
-                  <h6 class="preview-subject ellipsis font-weight-medium">David Grey
-                    <span class="float-right font-weight-light small-text">1 Minutes ago</span>
-                  </h6>
-                  <p class="font-weight-light small-text">
-                    The meeting is cancelled
-                  </p>
-                </div>
-              </a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                    <img src="{{ asset('assets/backend/images/faces/face2.jpg') }}" alt="image" class="profile-pic">
-                </div>
-                <div class="preview-item-content flex-grow">
-                  <h6 class="preview-subject ellipsis font-weight-medium">Tim Cook
-                    <span class="float-right font-weight-light small-text">15 Minutes ago</span>
-                  </h6>
-                  <p class="font-weight-light small-text">
-                    New product launch
-                  </p>
-                </div>
-              </a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                    <img src="{{ asset('assets/backend/images/logo-mini.png') }}" alt="image" class="profile-pic">
-                </div>
-                <div class="preview-item-content flex-grow">
-                  <h6 class="preview-subject ellipsis font-weight-medium"> Johnson
-                    <span class="float-right font-weight-light small-text">18 Minutes ago</span>
-                  </h6>
-                  <p class="font-weight-light small-text">
-                    Upcoming board meeting
-                  </p>
-                </div>
-              </a>
-            </div>
-          </li> --}}
+
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
               <img src="{{ asset('assets/backend/images/logo-mini.png') }}" alt="profile"/>
@@ -185,7 +71,7 @@
       </div>
     </nav>
     <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
+    <div class="page-body-wrapper">
       <!-- partial:partials/_settings-panel.html -->
       <div class="theme-setting-wrapper">
         <div id="settings-trigger"><i class="fas fa-fill-drip"></i></div>
@@ -357,36 +243,92 @@
       </div>
       <!-- partial -->
 
+
+
+
 <div class="modal fade" id="exampleModal-4" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <!-- <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div> -->
-      <form role="form" action="{{ route('allnumber.store')}}" method="post" enctype="multipart/form-data">
-        {{ csrf_field()}}
-        <div class="modal-body">
-             <div class="form-group">
-                <label for="number">Add_Number</label>
-                  <!-- <input type="number" class="form-control" id="number" name="number" minlength="3" maxlength="3" placeholder="Number"> -->
-                  <input name="allnumber"
-                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                  type = "number" class="form-control"
-                  maxlength = "3"
-                />
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalLabel">Change Password</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form method="POST" action="{{ route('change-password.store') }}">
+          <div class="modal-body">
+              @csrf
+
+              <div class="form-group">
+
+
+                <label for="recipient-name" class="col-form-label">Current Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+
+                <input id="password"  name="current_password" type="password" required />
+
+                <i class="far fa-eye" id="togglePassword"></i>
+
+                    @error('current_password')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                      @enderror
+
 
             </div>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-success">Submit</button>
-          <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
-        </div>
-      </form>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">New Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input id="password1" name="new_password" type="password" required />
+                <i class="far fa-eye" id="togglePassword1"></i>
+                @error('new_password')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">New Confirm Password:&nbsp;</label>
+                <input id="password2" name="new_confirm_password" type="password" required />
+                <i class="far fa-eye" id="togglePassword2"></i>
+
+                @error('new_confrim_password')
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                  </span>
+                  @enderror
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success">Update Password</button>
+            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-</div>
 
+<script>
+   togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
 
+    togglePassword1.addEventListener('click', function (e) {
+     // toggle the type attribute
+     const type = password1.getAttribute('type') === 'password' ? 'text' : 'password';
+     password1.setAttribute('type', type);
+     // toggle the eye slash icon
+     this.classList.toggle('fa-eye-slash');
+ });
 
+    togglePassword2.addEventListener('click', function (e) {
+     // toggle the type attribute
+     const type = password2.getAttribute('type') === 'password' ? 'text' : 'password';
+     password2.setAttribute('type', type);
+     // toggle the eye slash icon
+     this.classList.toggle('fa-eye-slash');
+ });
+ </script>

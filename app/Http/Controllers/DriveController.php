@@ -14,7 +14,7 @@ class DriveController extends Controller
      */
     public function index()
     {
-   
+    
         $users = User::all();
         $drives= auth()->user()->drives;
         return view('backend.football.show',compact('users','drives'));
@@ -23,7 +23,6 @@ class DriveController extends Controller
     {
         $users = User::all();
         $drives= $user->drives;
-
         return view('backend.football.show2',compact('users','drives','user'));
     }
     /**

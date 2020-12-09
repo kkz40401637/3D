@@ -15,28 +15,33 @@ class ReportContrller extends Controller
      */
     public function index()
     {
-        $offnumbers = Offnumber::all();
+        $offnumbers = Offnumber::where('user_id',auth()->user()->user_id)->get();
         $users = User::all();
         $reports= auth()->user()->reports;
-
-
-        // $reports = Report::all();
         return view('backend.report.report',compact('users','reports','offnumbers'));
     }
     public function index2(User $user)
     {
-        $offnumbers = Offnumber::all();
+        $offnumbers= auth()->user()->offnumbers;
         $users = User::all();
         $reports= $user->reports;
 
         // $reports = Report::all();
         return view('backend.report.report2',compact('users','reports','offnumbers','user'));
     }
+    
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function off()
+    {
+        $offnumbers= auth()->user()->offnumbers;
+        $users = User::all();
+        $reports= auth()->user()->reports;
+        return view('backend.report.off',compact('users','reports','offnumbers'));
+    }
     public function create()
     {
         //
@@ -76,7 +81,7 @@ class ReportContrller extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -97,9 +102,12 @@ class ReportContrller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        //
+        // $reports =  Report::find($id);
+        // $reports->role = 'ပေါက်တယ်';
+        // $reports->save();
+        // return redirect()->back();
     }
 
     /**
@@ -111,6 +119,6 @@ class ReportContrller extends Controller
     public function destroy($id)
     {
         Report::find($id)->delete();
-        return redirect('reports');
+        return redirect()->back();
     }
 }

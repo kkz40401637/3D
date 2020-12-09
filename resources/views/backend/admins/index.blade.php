@@ -4,17 +4,7 @@
 
 <div class="main-panel">
   <div class="content-wrapper">
-    {{-- <div class="page-header">
-      <h3 class="page-title">
-        User Lists
-      </h3>
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="#">Admins</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Admin Lists</li>
-        </ol>
-      </nav>
-    </div> --}}
+
     <div class="card">
       <div class="card-body">
         <h4 class="card-title">Admin Lists</h4>
@@ -40,10 +30,10 @@
 
                     <td>
                       <form action="{{ route('admins.destroy',$user->id) }}" method="POST">
-                        <a class="btn btn-outline-warning" href="{{ route('admins.edit',$user->id)}}">Edit</a>
+                        <a class="btn btn-outline-success btn-fw" href="{{ route('admins.edit',$user->id)}}"><i class="fa fa-bars float-right"></i>Edit</a>
                         @csrf
                         @method('DELETE')
-                        <button onclick="return confirm('Are you sure want to delete this?')" type="submit" class="btn btn-outline-danger">Delete</button>
+                        <button onclick="return confirm('Are you sure want to delete this?')" type="submit" class="btn btn-outline-danger">Delete <i class="fa fa-bars float-trush"></i></button>
                       </form>
                     </td>
                   </tr>

@@ -26,6 +26,7 @@ class CreateDrivesTable extends Migration
             $table->string('footg')->nullable();
             $table->string('footh')->nullable();
             $table->string('footi')->nullable();
+             $table->enum('ban_stdatus',['စစ်ဆေးဆဲ','လွဲပြီး'])->default('စစ်ဆေးဆဲ');
             $table->string('money');
             $table->timestamps();
         });

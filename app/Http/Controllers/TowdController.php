@@ -12,7 +12,7 @@ class TowdController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(User $user)
     {
        
         $users = User::all();
@@ -73,12 +73,11 @@ class TowdController extends Controller
 
         $towds->towde = $request->towde;
         $towds->moneye = $request->moneye;
-
-       
        
         if($towds->save());
         $user = User::find(auth()->user()->id);
-        $user->money = auth()->user()->money-$towds->moneya;
+        $total=  $towds->moneya+ $towds->moneyb+ $towds->moneyc+$towds->moneyd+ $towds->moneye;
+        $user->money = auth()->user()->money-$total;
         $user->save();
 
         return redirect()->back()->with('success', 'လူးကြီးမင်း၏လုပ်ဆောင်မူ့အောင်မြင်ပါသည်');}
@@ -115,7 +114,8 @@ class TowdController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         
+    
     }
 
     /**

@@ -20,7 +20,7 @@
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Name</label>
                       <div class="col-sm-9">
-                        <input class="form-control" name="name"type="text" value="{{ $user->name }}" required />
+                        <input class="form-control" name="name"type="text" value="{{ $user->name }}" required  disabled/>
                       </div>
                     </div>
                   </div>

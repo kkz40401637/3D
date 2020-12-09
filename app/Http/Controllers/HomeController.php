@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use App\Offnumber;
+use App\Withdraw;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,7 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $users = User::count();
-        return view('home',compact('users'));
+
+        $wdraws= auth()->user()->wdraws;
+        return view('home',compact('users','wdraws','moneys'));
     }
 }

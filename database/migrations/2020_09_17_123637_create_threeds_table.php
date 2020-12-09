@@ -15,7 +15,7 @@ class CreateThreedsTable extends Migration
     {
         Schema::create('threeds', function (Blueprint $table) {
             $table->id();
-            // $table->char('number');
+            $table->foreignId('user_id');
             $table->integer('number');
 
             $table->timestamps();

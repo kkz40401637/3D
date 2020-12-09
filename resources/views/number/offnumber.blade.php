@@ -6,7 +6,7 @@
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                      <button type="button" class="btn btn-dark btn-lg btn-block">ပိတ်ဂဏန်းများကို သေချာစွာစစ်ဆေး၍ထည့်ပါ</button><hr>
+                      <button type="button" class="btn btn-dark btn-lg btn-block" disabled>ပိတ်ဂဏန်းများကို သေချာစွာစစ်ဆေး၍ထည့်ပါ</button><hr>
                         <form role="form" action="{{ route('offnumber.store')}}" method="post" enctype="multipart/form-data">
                         {{ csrf_field()}}
                     <div class="form-group">
@@ -37,8 +37,8 @@
                 <thead>
                   <tr>
                     <th>No.</th>
-                    <th>Name</th>
-                    <th>Action</th>
+                    <th>ပိတ်ဂဏန်းများ</th>
+                    <th>ဖျက်မယ်</th>
                   </tr>
                 </thead>
                 <tbody>

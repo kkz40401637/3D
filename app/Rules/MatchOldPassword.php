@@ -15,19 +15,30 @@ class MatchOldPassword implements Rule
      * @param  mixed  $value
      * @return bool
      */
-    public function passes($attribute, $value)
-    {
-        if (Auth::guard('$gurad')->check()) {
-            if(Auth()->user()->hasRole('superadmin')){
-            return Hash::check($value, Auth()->user()->hasRole('superadmin')->password);
-        }elseif(Auth()->user()->hasRole('admin')){
-            return Hash::check($value, Auth()->user()->hasRole('admin')->password);
-        }elseif(Auth()->user()->hasRole('user')){
-            return Hash::check($value, Auth()->user()->hasRole('user')->password);
+//     public function passes($attribute, $value)
+//     {
+//         if (Auth::guard('$gurad')->check()) {
+//             if(Auth()->user()->hasRole('superadmin')){
+//             return Hash::check($value, Auth()->user()->hasRole('superadmin')->password);
+//         }elseif(Auth()->user()->hasRole('admin')){
+//             return Hash::check($value, Auth()->user()->hasRole('admin')->password);
+//         }elseif(Auth()->user()->hasRole('user')){
+//             return Hash::check($value, Auth()->user()->hasRole('user')->password);
 
+//         }
+//     }
+// }
+     public function passes($attribute, $value)
+        {
+
+
+         if(Auth()->user()->hasRole('admin')){
+            return Hash::check($value, Auth()->user()->password);
+        }
+        elseif(Auth()->user()->hasRole('user')){
+            return Hash::check($value, Auth()->user()->password);
         }
     }
-}
 
     /**
      * Get the validation error message.

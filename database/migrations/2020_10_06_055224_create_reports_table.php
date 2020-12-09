@@ -18,6 +18,7 @@ class CreateReportsTable extends Migration
             $table->foreignId('user_id');
             $table->string('number');
             $table->string('ammount');
+            $table->enum('role',['ပေါက်တယ်','အဖြေ'])->default('အဖြေ');
             $table->timestamps();
         });
     }

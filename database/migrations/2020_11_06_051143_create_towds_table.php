@@ -46,7 +46,7 @@ class CreateTowdsTable extends Migration
 
             $table->string('towdj')->nullable();
             $table->string('moneyj')->nullable();
-            
+           
             $table->timestamps();
         });
     }
